@@ -16,3 +16,16 @@
     color: darken($color: $btn-text-color, $amount: 10);
   }
 }
+
+.media-object {
+  display: flex;
+  align-items: start;
+  > * + * {
+    margin-left: 1.67em;
+  }
+  &__title {
+    margin-top: 0;
+    font-size: 1.56em;
+    font-weight: 700;
+  }
+}
