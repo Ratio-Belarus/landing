@@ -1,0 +1,6 @@
+mixin media-object(obj)
+    .media-object
+        img(src=`@assets/${obj.img}`, alt="image")
+        .media-object__content
+            h3.media-object__title= obj.title
+            p.media-object__description= obj.text
