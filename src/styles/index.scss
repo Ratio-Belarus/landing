@@ -1,1 +1,18 @@
+@import "vars.scss";
+@import "fonts.scss";
 @import "global.scss";
+
+.button {
+  color: $btn-text-color;
+  width: 11.25rem;
+  height: 3.75rem;
+  background-color: $brand-color;
+  border-radius: $btn-radius;
+  outline: none;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  &_active {
+    background-color: darken($color: $brand-color, $amount: 10);
+    color: darken($color: $btn-text-color, $amount: 10);
+  }
+}
