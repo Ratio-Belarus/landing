@@ -83,15 +83,19 @@
 }
 
 .title {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $text-color;
+  line-height: 1;
+  font-weight: 700;
   &_main {
-    margin-top: 0;
-    margin-bottom: 0;
     font-size: 4rem;
-    line-height: 1;
-    font-weight: 700;
     > span {
       color: $brand-color;
     }
+  }
+  &_secondary {
+    font-size: 3rem;
   }
 }
 
