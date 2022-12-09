@@ -21,7 +21,7 @@ main.main
             .section.section_functions
                 .section_content
                     h2.title.title_secondary Функцыі
-                    .functions
+                    .grid
                         -
                             let functions = [
                                 {
@@ -44,9 +44,57 @@ main.main
                                     title: "Лідарства.",
                                     text: "Кожны тыдзень Вы зможаце паспаборнічаць з астатнімі карыстальнікамі праграмы па колькасці атрыманых зорак."
                                 },
-                            ]
+                            ];
                         each elem in functions
                             +media-object(elem)
+            .section.section_team
+                .section__content
+                    h2.title.title_secondary Каманда
+                    .grid
+                        -
+                            let team = [
+                                {
+                                    img: "user-img-1.jpg",
+                                    name: "Нік",
+                                    speciality: "Аўтар урокаў",
+                                    social_networks: {
+                                        twitter: "https://twitter.com",
+                                        telegram: "https://web.telegram.org",
+                                        instagram: "https://www.instagram.com"
+                                    }
+                                },
+                                {
+                                    img: "user-img-2.jpg",
+                                    name: "Алесь Вясёлка",
+                                    speciality: "Рэдактар урокаў",
+                                    social_networks: {
+                                        twitter: "https://twitter.com",
+                                        telegram: "https://web.telegram.org"
+                                    }
+                                },
+                                {
+                                    img: "user-img-3.jpg",
+                                    name: "DzedBaradzed84",
+                                    speciality: "Распрацоўшчык (React)",
+                                    social_networks: {
+                                        twitter: "https://twitter.com",
+                                        telegram: "https://web.telegram.org",
+                                        instagram: "https://www.instagram.com",
+                                        twitch: "https://www.twitch.tv",
+                                        github: "https://github.com",
+                                        linkedin: "https://www.linkedin.com"
+                                    }
+                                },
+                                {
+                                    img: "user-img-default.svg",
+                                    name: "Ян Яновіч",
+                                    speciality: "Тэсціроўшчык",
+                                },
+                            ];
+                        each elem in team
+                            +media-object(elem)
+                                if elem.social_networks
+                                    +social-networks-bar(elem.social_networks, "card")
 
     //- +media-object({
     //-     img: "user-img-1.jpg",
