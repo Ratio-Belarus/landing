@@ -1,0 +1,18 @@
+mixin social-networks-bar(obj)
+    ul.social-networks-list
+        each elem, key in obj
+            li.social-networks-item
+                a.social-networks-link
+                    case key
+                        when "twitter"
+                            img(src="assets/twitter-icon.svg" alt="twitter")
+                        when "telegram"
+                            img(src="assets/telegram-icon.svg" alt="telegram")
+                        when "instagram"
+                            img(src="assets/instagram-icon.svg" alt="instagram")
+                        when "twitch"
+                            img(src="assets/twitch-icon.svg" alt="twitch")
+                        when "github"
+                            img(src="assets/github-icon.svg" alt="github")
+                        when "linkedin"
+                            img(src="assets/linkedin-icon.svg" alt="linkedin")

@@ -8,20 +8,4 @@ mixin media-object(obj)
             else
                 h3.media-object__name= obj.name
                 p.media-object__description= obj.speciality
-                ul.media-object__social-networks-list
-                    each elem, key in obj.social_networks
-                        li.media-object__social-networks-item
-                            a.media-object__social-netwirks-link
-                                case key
-                                    when "twitter"
-                                        img(src="assets/twitter-icon.svg", alt="twitter")
-                                    when "telegram"
-                                        img(src="assets/telegram-icon.svg", alt="telegram")
-                                    when "instagram"
-                                        img(src="assets/instagram-icon.svg", alt="instagram")
-                                    when "twitch"
-                                        img(src="assets/twitch-icon.svg", alt="twitch")
-                                    when "github"
-                                        img(src="assets/github-icon.svg", alt="github")
-                                    when "linkedin"
-                                        img(src="assets/linkedin-icon.svg", alt="linkedin")
+                block
