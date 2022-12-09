@@ -2,15 +2,14 @@ include pug/modules/_modules
 
 doctype html
 include pug/_head
-div(style='display: flex; justify-content: center; align-items: center; height: 100%;')
-    img(src='assets/logo.png' alt='Рацыя' style='height: 60%;')
-    +media-object({
-        img: "user-img-1.jpg",
-        name: "Нік",
-        speciality: "Аўтар урокаў",
-    })
-        +social-networks-bar({
-            twitter: "https://twitter.com",
-            telegram: "https://web.telegram.org",
-            instagram: "https://www.instagram.com"
-        }, "card")
+include pug/_header
+    //- +media-object({
+    //-     img: "user-img-1.jpg",
+    //-     name: "Нік",
+    //-     speciality: "Аўтар урокаў",
+    //- })
+        //- +social-networks-bar({
+        //-     twitter: "https://twitter.com",
+        //-     telegram: "https://web.telegram.org",
+        //-     instagram: "https://www.instagram.com"
+        //- }, "card")

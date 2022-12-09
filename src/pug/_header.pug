@@ -1,0 +1,11 @@
+header.header
+    .container
+        .header__inner
+            img.logo(src="assets/logo-icon.svg")
+            span.logo-text Рацыя
+            +social-networks-bar({
+                twitter: "https://twitter.com",
+                instagram: "https://www.instagram.com",
+                email: "https://www.google.com"
+            }, "menu")
+            +button("Далучыцца")
