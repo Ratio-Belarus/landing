@@ -1,20 +1,20 @@
 mixin social-networks-bar(obj, className)
     ul(class=`social-networks-bar social-networks-bar_${className}`)
         each elem, key in obj
-            li.social-networks-item
-                a.social-networks-link(href=elem)
+            li.social-networks-bar__item
+                a.social-networks-bar__link(href=elem)
                     case key
                         when "twitter"
-                            img(src="assets/twitter-icon.svg" alt="twitter")
+                            img.social-networks-bar__icon(src="assets/twitter-icon.svg" alt="twitter")
                         when "telegram"
-                            img(src="assets/telegram-icon.svg" alt="telegram")
+                            img.social-networks-bar__icon(src="assets/telegram-icon.svg" alt="telegram")
                         when "instagram"
-                            img(src="assets/instagram-icon.svg" alt="instagram")
+                            img.social-networks-bar__icon(src="assets/instagram-icon.svg" alt="instagram")
                         when "twitch"
-                            img(src="assets/twitch-icon.svg" alt="twitch")
+                            img.social-networks-bar__icon(src="assets/twitch-icon.svg" alt="twitch")
                         when "github"
-                            img(src="assets/github-icon.svg" alt="github")
+                            img.social-networks-bar__icon(src="assets/github-icon.svg" alt="github")
                         when "linkedin"
-                            img(src="assets/linkedin-icon.svg" alt="linkedin")
+                            img.social-networks-bar__icon(src="assets/linkedin-icon.svg" alt="linkedin")
                         when "email"
-                            img(src="assets/email-icon.svg" alt="email")
+                            img.social-networks-bar__icon(src="assets/email-icon.svg" alt="email")
