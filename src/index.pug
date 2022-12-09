@@ -3,13 +3,28 @@ include pug/modules/_modules
 doctype html
 include pug/_head
 include pug/_header
+main.main
+    .container
+        .main__inner
+            .section.section_intro
+                .section__content
+                    h1.title.title_main 
+                        | Мабільная праграма для вывучэння 
+                        span беларускай 
+                        | мовы
+                    p.description
+                        | Каму мы патрэбныя, калі не сабе?! Дакладна не саве Дуалінга.
+                        | У кастрычніку 2022 года мы сабралі каманду валанцёраў і пачалі 
+                        | рабіць мабільную праграму, каб вывучаць родную мову і перайсці на 
+                        | яе ў штодзённым жыцці было прасцей.
+                    +button("Далучыцца")
     //- +media-object({
     //-     img: "user-img-1.jpg",
     //-     name: "Нік",
     //-     speciality: "Аўтар урокаў",
     //- })
-        //- +social-networks-bar({
-        //-     twitter: "https://twitter.com",
-        //-     telegram: "https://web.telegram.org",
-        //-     instagram: "https://www.instagram.com"
-        //- }, "card")
+    //- +social-networks-bar({
+    //-     twitter: "https://twitter.com",
+    //-     telegram: "https://web.telegram.org",
+    //-     instagram: "https://www.instagram.com"
+    //- }, "card")

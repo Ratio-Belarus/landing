@@ -71,3 +71,30 @@
   font-weight: 700;
   color: $brand-color;
 }
+
+.section {
+  &_intro {
+    margin-top: 8.125rem;
+    margin-bottom: 17rem;
+    .section__content {
+      max-width: 60%;
+    }
+  }
+}
+
+.title {
+  &_main {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 700;
+    > span {
+      color: $brand-color;
+    }
+  }
+}
+
+.description {
+  opacity: 0.5;
+}
