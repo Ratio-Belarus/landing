@@ -29,3 +29,19 @@
     font-weight: 700;
   }
 }
+
+.social-networks-bar {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+  &_card {
+    > * + * {
+      margin-left: 0.67em;
+    }
+  }
+  &_menu {
+    > * + * {
+      margin-left: 1.33em;
+    }
+  }
+}

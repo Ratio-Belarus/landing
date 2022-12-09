@@ -1,8 +1,8 @@
-mixin social-networks-bar(obj)
-    ul.social-networks-list
+mixin social-networks-bar(obj, className)
+    ul(class=`social-networks-bar social-networks-bar_${className}`)
         each elem, key in obj
             li.social-networks-item
-                a.social-networks-link
+                a.social-networks-link(href=elem)
                     case key
                         when "twitter"
                             img(src="assets/twitter-icon.svg" alt="twitter")
