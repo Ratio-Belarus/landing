@@ -32,6 +32,7 @@ function handleClick(event) {
     if (isButton) {
         const buttonId = document.getElementById(event.target.id);
         buttonId.classList.add("selected");
+        buttonId.disabled = true
     }
     return;
 }
@@ -41,13 +42,13 @@ const words = [
     "ПАТЭЛЬНЯ",
     "ЖУРАВІНЫ",
     "БУСЛІК",
+    "ЖУЖАЛЬ",
 ];
 
 //set answer
 function setAnswer() {
     const wordOrder = Math.floor(Math.random() * words.length);
     const chosenWord = words[wordOrder];
-    console.log(chosenWord);
     answer = chosenWord;
     answerDisplay.innerHTML = generateAnswerDisplay(chosenWord);
 }
@@ -108,10 +109,12 @@ function guess(event) {
             } else {
                 counter = 0;
             }
-            if (life > 1) {
-                livesDisplay.innerHTML = `У Вас засталося ${life} спроб!`;
-            } else if (life < 5) {
+            if (life < 5 && life > 1) {
                 livesDisplay.innerHTML = `У Вас засталося ${life} спробы!`;
+            } else if (life === 1) {
+                livesDisplay.innerHTML = `У Вас засталася ${life} спроба!`;
+            } else if (life > 0) {
+                livesDisplay.innerHTML = `У Вас засталося ${life} спроб!`;
             } else {
                 livesDisplay.innerHTML = `Паражэнне!`;
             }
