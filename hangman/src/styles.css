@@ -4,7 +4,7 @@ body {
     color: #d10000;
     text-align: center;
     height: 100%;
-    margin-top: 100px;
+    margin-top: 6%;
     font-size: 18px;
 }
 
@@ -66,7 +66,7 @@ Button:hover {
     color: #3d3d3d;
 }
 
-.btn-2 {
+.playAgain, .resetButton {
     border-radius: 10px;
     background: white;
     color: #d10000;
@@ -80,15 +80,53 @@ Button:hover {
     margin: 20px 10px 10px 0;
     outline: none;
 }
-.btn-2:hover {
+
+.playAgain, .resetButton:hover {
     transition: 0.5s;
     background: #d10000;
     border: solid 1px #d10000;
     color: white;
 }
 
-#hold {
-    margin: 48px 0;
+#answerPlaceholder {
+    margin: 24px 0;
     font-weight: bold;
     font-size: 2.2rem;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transition: 200ms ease-in-out;
+    width: 90%;
+    max-width: 640px;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.details {
+    font-size: 1.6rem;
+    padding: 30px 15px;
+}
+
+.gameStatus {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }

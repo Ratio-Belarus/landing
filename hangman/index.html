@@ -1,26 +1,40 @@
 <!DOCTYPE html>
-<html lang="be">
+<html lang="be" translate="no">
 <head>
-  <title>Гульня Шыбеніца</title>
-  <meta charset="UTF-8">
-  <link rel="shortcut icon" type="image/x-icon" href="../static/favicon.ico">
-  <link href="src/styles.css" rel="stylesheet" type="text/css">
+    <title>Гульня Шыбеніца</title>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Гульня Шыбеніца (Hangman) онлайн па-беларуску. Угадайце слова на беларускай мове за 10 спроб.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../static/favicon.ico">
+    <link href="src/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 <div class="wrapper">
-  <h1>Шыбеніца</h1>
-  <p>
-    Угадайце слова з дапамогай клавіятуры ніжэй.
-  </p>
-  <div class="alphabetButton" id="alphabetButtons"></div>
-  <div id="hold"></div>
-  <p id="mylives"></p>
-  <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
-  <div class="container">
-    <button class="btn-2" id="reset">Згуляць зноў</button>
-  </div>
+    <h1>Шыбеніца</h1>
+    <p>
+        Угадайце загаданае слова.<br>Гэта заўсёды будзе назоўнік у пачатковай форме.
+    </p>
+    <div class="alphabetButtons" id="alphabetButtons"></div>
+    <div id="answerPlaceholder"></div>
+    <p id="mylives"></p>
+    <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+    <div class="container">
+        <button class="resetButton" id="reset">Згуляць зноў</button>
+    </div>
 </div>
+<div id="overlay">
+    <div class="modal">
+        <div class="header">
+            <div class="gameStatus" id="gameStatus"></div>
+        </div>
+        <div class="details" id="details"></div>
+        <div class="container">
+            <button class="resetButton" id="playAgain">Згуляць зноў</button>
+        </div>
+    </div>
+</div>
+<script src="src/wordBank.js"></script>
 <script src="src/index.js"></script>
 </body>
 </html>
