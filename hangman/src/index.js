@@ -1,14 +1,18 @@
 const container = document.getElementById("alphabetButtons");
-let answerDisplay = document.getElementById("hold");
+let answerDisplay = document.getElementById("answerPlaceholder");
 let chosenWord = {};
 let answer = "";
 let life = 10;
 let wordDisplay = [];
 let winningCheck = "";
 const buttonReset = document.getElementById("reset");
+const buttonPlayAgain = document.getElementById("playAgain");
+const gameStatus = document.getElementById("gameStatus");
+const details = document.getElementById("details");
+const overlay = document.getElementById("overlay");
 const livesDisplay = document.getElementById("mylives");
-let myStickman = document.getElementById("stickman");
-let context = myStickman.getContext("2d");
+let stickman = document.getElementById("stickman");
+let context = stickman.getContext("2d");
 
 //generate alphabet buttons
 function generateButton() {
@@ -17,7 +21,7 @@ function generateButton() {
         .map(
             (letter) =>
                 `<button
-         class = "alphabetButtonJS" 
+         class = "alphabetButton" 
          id="${letter}"
          >
         ${letter}
@@ -57,7 +61,7 @@ function generateAnswerDisplay(word) {
 
 //setting initial condition
 function init() {
-    answer = "";
+    overlay.classList.remove('active');
     life = 10;
     wordDisplay = [];
     winningCheck = "";
@@ -71,8 +75,15 @@ function init() {
 
 window.onload = init();
 
-//reset (play again)
+//reset, play again
 buttonReset.addEventListener("click", init);
+buttonPlayAgain.addEventListener("click", init);
+
+function showOverlay(success) {
+    overlay.classList.add('active');
+    gameStatus.innerHTML = success ? `Перамога!` : `Паражэнне!`;
+    details.innerHTML = `Загаданае слова: <strong>${chosenWord.word}</strong><br>${chosenWord.definition}`;
+}
 
 //guess click
 function guess(event) {
@@ -80,8 +91,7 @@ function guess(event) {
     const answerArray = answer.split("");
     let counter = 0;
     if (answer === winningCheck) {
-        livesDisplay.innerHTML = `Перамога!`;
-        return;
+        showOverlay(true);
     } else {
         if (life > 0) {
             for (let j = 0; j < answer.length; j++) {
@@ -106,14 +116,13 @@ function guess(event) {
             } else if (life > 0) {
                 livesDisplay.innerHTML = `У Вас засталося ${life} спроб!`;
             } else {
-                livesDisplay.innerHTML = `Паражэнне!`;
+                showOverlay(false);
             }
         } else {
             return;
         }
         if (answer === winningCheck) {
-            livesDisplay.innerHTML = `Перамога!`;
-            return;
+            showOverlay(true);
         }
     }
 }
@@ -126,16 +135,16 @@ function animate() {
 }
 
 function canvas() {
-    myStickman = document.getElementById("stickman");
-    context = myStickman.getContext("2d");
+    stickman = document.getElementById("stickman");
+    context = stickman.getContext("2d");
     context.beginPath();
     context.strokeStyle = "#d10000";
     context.lineWidth = 2;
 }
 
 function head() {
-    myStickman = document.getElementById("stickman");
-    context = myStickman.getContext("2d");
+    stickman = document.getElementById("stickman");
+    context = stickman.getContext("2d");
     context.beginPath();
     context.arc(60, 25, 10, 0, Math.PI * 2, true);
     context.stroke();
