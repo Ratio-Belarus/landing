@@ -1,5 +1,6 @@
 const container = document.getElementById("alphabetButtons");
 let answerDisplay = document.getElementById("hold");
+let chosenWord = {};
 let answer = "";
 let life = 10;
 let wordDisplay = [];
@@ -11,7 +12,7 @@ let context = myStickman.getContext("2d");
 
 //generate alphabet buttons
 function generateButton() {
-    const buttonsHTML = "АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЫЬЭЮЯ"
+    return "АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЫЬЭЮЯ’"
         .split("")
         .map(
             (letter) =>
@@ -23,8 +24,6 @@ function generateButton() {
         </button>`
         )
         .join("");
-
-    return buttonsHTML;
 }
 
 function handleClick(event) {
@@ -32,25 +31,16 @@ function handleClick(event) {
     if (isButton) {
         const buttonId = document.getElementById(event.target.id);
         buttonId.classList.add("selected");
-        buttonId.disabled = true
+        buttonId.disabled = true;
     }
-    return;
 }
-
-const words = [
-    "ШЫБЕНІЦА",
-    "ПАТЭЛЬНЯ",
-    "ЖУРАВІНЫ",
-    "БУСЛІК",
-    "ЖУЖАЛЬ",
-];
 
 //set answer
 function setAnswer() {
     const wordOrder = Math.floor(Math.random() * words.length);
-    const chosenWord = words[wordOrder];
-    answer = chosenWord;
-    answerDisplay.innerHTML = generateAnswerDisplay(chosenWord);
+    chosenWord = words[wordOrder];
+    answer = chosenWord.word;
+    answerDisplay.innerHTML = generateAnswerDisplay(chosenWord.word);
 }
 
 function generateAnswerDisplay(word) {
