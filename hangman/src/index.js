@@ -15,21 +15,6 @@ const talersDisplay = document.getElementById("talers");
 let stickman = document.getElementById("stickman");
 let context = stickman.getContext("2d");
 
-//generate alphabet buttons
-function generateButton() {
-    return "АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЫЬЭЮЯ’"
-        .split("")
-        .map(
-            (letter) =>
-                `<button
-         class = "alphabetButton" 
-         id="${letter}"
-         >
-        ${letter}
-        </button>`
-        )
-        .join("");
-}
 
 function handleClick(event) {
     const isButton = event.target.nodeName === "BUTTON";
@@ -60,6 +45,7 @@ function generateAnswerDisplay(word) {
     return wordDisplay.join(" ");
 }
 
+
 //setting initial condition
 function init() {
     overlay.classList.remove('active');
@@ -72,8 +58,11 @@ function init() {
     canvas();
     livesDisplay.innerHTML = lives;
     setAnswer();
-    console.log(answer);
-    container.innerHTML = generateButton();
+    let alphabetButtons = Array.from(document.getElementsByClassName("alphabetButton"));
+    alphabetButtons.forEach(function (element) {
+        element.disabled = false;
+        element.classList.remove("selected");
+    });
     container.addEventListener("click", handleClick);
 }
 

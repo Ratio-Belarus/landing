@@ -4,7 +4,7 @@ body {
     color: #d10000;
     text-align: center;
     height: 100%;
-    margin-top: 6%;
+    margin-top: 5%;
     font-size: 18px;
 }
 
@@ -35,7 +35,12 @@ h2 {
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1em;
+}
+
+a {
+    color: #d10000;
+    font-size: 0.9rem;
 }
 
 Button {
@@ -47,7 +52,6 @@ Button {
     color: #d10000;
     width: 35px;
     height: 35px;
-    margin: 0 10px 10px 0;
     outline: none;
 }
 
@@ -169,12 +173,25 @@ Button:hover {
     background: url('./icons/heartIcon.svg');
     width: 40px;
     height: 40px;
-    margin: 0 16px;
+    margin: 0 10px;
 }
 
 .talerIcon {
     background: url('./icons/talerIcon.svg');
     height: 40px;
     width: 40px;
-    margin: 0 16px;
+    margin: 0 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.column {
+    flex: 1;
+    max-width: 35px;
 }
