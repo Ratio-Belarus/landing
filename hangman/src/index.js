@@ -2,7 +2,7 @@ const container = document.getElementById("alphabetButtons");
 let answerDisplay = document.getElementById("answerPlaceholder");
 let chosenWord = {};
 let answer = "";
-let life = 10;
+let lives = 10;
 let wordDisplay = [];
 let winningCheck = "";
 const buttonReset = document.getElementById("reset");
@@ -10,25 +10,11 @@ const buttonPlayAgain = document.getElementById("playAgain");
 const gameStatus = document.getElementById("gameStatus");
 const details = document.getElementById("details");
 const overlay = document.getElementById("overlay");
-const livesDisplay = document.getElementById("mylives");
+const livesDisplay = document.getElementById("lives");
+const talersDisplay = document.getElementById("talers");
 let stickman = document.getElementById("stickman");
 let context = stickman.getContext("2d");
 
-//generate alphabet buttons
-function generateButton() {
-    return "АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЫЬЭЮЯ’"
-        .split("")
-        .map(
-            (letter) =>
-                `<button
-         class = "alphabetButton" 
-         id="${letter}"
-         >
-        ${letter}
-        </button>`
-        )
-        .join("");
-}
 
 function handleClick(event) {
     const isButton = event.target.nodeName === "BUTTON";
@@ -59,17 +45,24 @@ function generateAnswerDisplay(word) {
     return wordDisplay.join(" ");
 }
 
+
 //setting initial condition
 function init() {
     overlay.classList.remove('active');
-    life = 10;
+    lives = 10;
+    let talers = sessionStorage.getItem("talers");
+    talersDisplay.innerHTML = talers ? talers : 0;
     wordDisplay = [];
     winningCheck = "";
     context.clearRect(0, 0, 400, 400);
     canvas();
-    livesDisplay.innerHTML = `У Вас засталося ${life} спроб!`;
+    livesDisplay.innerHTML = lives;
     setAnswer();
-    container.innerHTML = generateButton();
+    let alphabetButtons = Array.from(document.getElementsByClassName("alphabetButton"));
+    alphabetButtons.forEach(function (element) {
+        element.disabled = false;
+        element.classList.remove("selected");
+    });
     container.addEventListener("click", handleClick);
 }
 
@@ -81,8 +74,19 @@ buttonPlayAgain.addEventListener("click", init);
 
 function showOverlay(success) {
     overlay.classList.add('active');
-    gameStatus.innerHTML = success ? `Перамога!` : `Паражэнне!`;
+    gameStatus.innerHTML = success ? `Перамога &#x1F389;` : `Паражэнне &#x1F61E;`;
     details.innerHTML = `Загаданае слова: <strong>${chosenWord.word}</strong><br>${chosenWord.definition}`;
+}
+
+function handleTalers(success) {
+    let amount = 0;
+    let currentAmount = parseInt(sessionStorage.getItem("talers")) || 0;
+    if (success) {
+        amount = new Set(answer).size;
+    } else if (!success && currentAmount > 0) {
+        amount = -1;
+    }
+    sessionStorage.setItem("talers", currentAmount + amount);
 }
 
 //guess click
@@ -92,8 +96,9 @@ function guess(event) {
     let counter = 0;
     if (answer === winningCheck) {
         showOverlay(true);
+        handleTalers(true);
     } else {
-        if (life > 0) {
+        if (lives > 0) {
             for (let j = 0; j < answer.length; j++) {
                 if (guessWord === answerArray[j]) {
                     wordDisplay[j] = guessWord;
@@ -103,26 +108,24 @@ function guess(event) {
                 }
             }
             if (counter === 0) {
-                life -= 1;
+                lives -= 1;
                 counter = 0;
                 animate();
             } else {
                 counter = 0;
             }
-            if (life < 5 && life > 1) {
-                livesDisplay.innerHTML = `У Вас засталося ${life} спробы!`;
-            } else if (life === 1) {
-                livesDisplay.innerHTML = `У Вас засталася ${life} спроба!`;
-            } else if (life > 0) {
-                livesDisplay.innerHTML = `У Вас засталося ${life} спроб!`;
+            if (lives > 0) {
+                livesDisplay.innerHTML = lives;
             } else {
                 showOverlay(false);
+                handleTalers(false);
             }
         } else {
             return;
         }
         if (answer === winningCheck) {
             showOverlay(true);
+            handleTalers(true);
         }
     }
 }
@@ -131,7 +134,7 @@ container.addEventListener("click", guess);
 
 // draw Hangman
 function animate() {
-    drawArray[life]();
+    drawArray[lives]();
 }
 
 function canvas() {

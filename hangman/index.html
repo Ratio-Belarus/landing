@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="be" translate="no">
 <head>
-    <title>Гульня Шыбеніца</title>
     <meta charset="UTF-8"/>
+    <title>Гульня Шыбеніца</title>
+    <meta property="og:title" content="Your Title">
     <meta name="description" content="Гульня Шыбеніца (Hangman) онлайн па-беларуску. Угадайце слова на беларускай мове за 10 спроб.">
+    <meta property="og:description" content="Гульня Шыбеніца (Hangman) онлайн па-беларуску. Угадайце слова на беларускай мове за 10 спроб.">
+    <link rel="shortcut icon" type="image/x-icon" href="./src/icons/favicon.ico">
+    <meta property="og:image" content="./src/icons/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-    <link rel="shortcut icon" type="image/x-icon" href="../static/favicon.ico">
     <link href="src/styles.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -15,13 +18,131 @@
     <p>
         Угадайце загаданае слова.<br>Гэта заўсёды будзе назоўнік у пачатковай форме.
     </p>
-    <div class="alphabetButtons" id="alphabetButtons"></div>
+    <div class="alphabetButtons" id="alphabetButtons">
+        <div class="row">
+            <div class="column">
+                <button class="alphabetButton" id="А">А</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Б">Б</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="В">В</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Г">Г</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Д">Д</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Е">Е</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Ё">Ё</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Ж">Ж</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <button class="alphabetButton" id="З">З</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="І">І</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Й">Й</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="К">К</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Л">Л</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="М">М</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Н">Н</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="О">О</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <button class="alphabetButton" id="П">П</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Р">Р</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="С">С</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Т">Т</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="У">У</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Ў">Ў</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Ф">Ф</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Х">Х</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <button class="alphabetButton" id="Ц">Ц</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Ч">Ч</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Ш">Ш</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Ы">Ы</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Ь">Ь</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column">
+                <button class="alphabetButton" id="Э">Э</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Ю">Ю</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="Я">Я</button>
+            </div>
+            <div class="column">
+                <button class="alphabetButton" id="’">’</button>
+            </div>
+        </div>
+    </div>
+    <div class="status">
+        <span class="heartIcon"></span>
+        <h2 id="lives"></h2>
+    </div>
+    <div class="talers">
+        <span class="talerIcon"></span>
+        <h2 id="talers"></h2>
+    </div>
     <div id="answerPlaceholder"></div>
-    <p id="mylives"></p>
     <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
     <div class="container">
         <button class="resetButton" id="reset">Згуляць зноў</button>
     </div>
+    <a href="https://forms.gle/4JYDFoWrG9ytNfwt5" target="_blank">Знайшлі памылку?</a>
 </div>
 <div id="overlay">
     <div class="modal">
@@ -30,7 +151,7 @@
         </div>
         <div class="details" id="details"></div>
         <div class="container">
-            <button class="resetButton" id="playAgain">Згуляць зноў</button>
+            <button class="playAgain" id="playAgain">Згуляць зноў</button>
         </div>
     </div>
 </div>
