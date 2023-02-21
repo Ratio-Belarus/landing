@@ -20,9 +20,7 @@ canvas {
     padding: 15px;
 }
 
-h1,
-h2,
-h3 {
+h1 {
     font-weight: 100;
     text-transform: uppercase;
     margin: 5px 0;
@@ -33,7 +31,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 p {
@@ -66,11 +64,11 @@ Button:hover {
     color: #3d3d3d;
 }
 
-.playAgain, .resetButton {
+.resetButton {
     border-radius: 10px;
     background: white;
     color: #d10000;
-    border: solid 1px #d10000;
+    border: solid 2px #d10000;
     text-decoration: none;
     cursor: pointer;
     font-size: 1.2em;
@@ -81,11 +79,33 @@ Button:hover {
     outline: none;
 }
 
-.playAgain, .resetButton:hover {
+.resetButton:hover {
     transition: 0.5s;
     background: #d10000;
     border: solid 1px #d10000;
     color: white;
+}
+
+.playAgain {
+    border-radius: 10px;
+    background: #d10000;
+    color: white;
+    border: solid 2px #d10000;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px 10px;
+    width: 180px;
+    height: 50px;
+    margin: 20px 10px 10px 0;
+    outline: none;
+}
+
+.playAgain:hover {
+    transition: 0.5s;
+    background: white;
+    border: solid 1px #d10000;
+    color: #d10000;
 }
 
 #answerPlaceholder {
@@ -129,4 +149,32 @@ Button:hover {
 #overlay.active {
     opacity: 1;
     pointer-events: all;
+}
+
+.status {
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+    width: 120px;
+}
+
+.talers {
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+    width: 120px;
+}
+
+.heartIcon {
+    background: url('./icons/heartIcon.svg');
+    width: 40px;
+    height: 40px;
+    margin: 0 16px;
+}
+
+.talerIcon {
+    background: url('./icons/talerIcon.svg');
+    height: 40px;
+    width: 40px;
+    margin: 0 16px;
 }

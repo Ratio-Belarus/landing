@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="be" translate="no">
 <head>
-    <title>Гульня Шыбеніца</title>
     <meta charset="UTF-8"/>
+    <title>Гульня Шыбеніца</title>
+    <meta property="og:title" content="Your Title">
     <meta name="description" content="Гульня Шыбеніца (Hangman) онлайн па-беларуску. Угадайце слова на беларускай мове за 10 спроб.">
+    <meta property="og:description" content="Гульня Шыбеніца (Hangman) онлайн па-беларуску. Угадайце слова на беларускай мове за 10 спроб.">
+    <link rel="shortcut icon" type="image/x-icon" href="./src/icons/favicon.ico">
+    <meta property="og:image" content="./src/icons/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-    <link rel="shortcut icon" type="image/x-icon" href="../static/favicon.ico">
     <link href="src/styles.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -16,8 +19,15 @@
         Угадайце загаданае слова.<br>Гэта заўсёды будзе назоўнік у пачатковай форме.
     </p>
     <div class="alphabetButtons" id="alphabetButtons"></div>
+    <div class="status">
+        <span class="heartIcon"></span>
+        <h2 id="lives"></h2>
+    </div>
+    <div class="talers">
+        <span class="talerIcon"></span>
+        <h2 id="talers"></h2>
+    </div>
     <div id="answerPlaceholder"></div>
-    <p id="mylives"></p>
     <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
     <div class="container">
         <button class="resetButton" id="reset">Згуляць зноў</button>
@@ -30,7 +40,7 @@
         </div>
         <div class="details" id="details"></div>
         <div class="container">
-            <button class="resetButton" id="playAgain">Згуляць зноў</button>
+            <button class="playAgain" id="playAgain">Згуляць зноў</button>
         </div>
     </div>
 </div>
