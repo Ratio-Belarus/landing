@@ -50,7 +50,7 @@ function generateAnswerDisplay(word) {
 function init() {
     overlay.classList.remove('active');
     lives = 10;
-    let talers = sessionStorage.getItem("talers");
+    let talers = localStorage.getItem("talers");
     talersDisplay.innerHTML = talers ? talers : 0;
     wordDisplay = [];
     winningCheck = "";
@@ -80,13 +80,13 @@ function showOverlay(success) {
 
 function handleTalers(success) {
     let amount = 0;
-    let currentAmount = parseInt(sessionStorage.getItem("talers")) || 0;
+    let currentAmount = parseInt(localStorage.getItem("talers")) || 0;
     if (success) {
         amount = new Set(answer).size;
     } else if (!success && currentAmount > 0) {
         amount = -1;
     }
-    sessionStorage.setItem("talers", currentAmount + amount);
+    localStorage.setItem("talers", currentAmount + amount);
 }
 
 //guess click
