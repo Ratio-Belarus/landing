@@ -35,7 +35,7 @@ h2 {
 }
 
 p {
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 a {
@@ -50,8 +50,8 @@ Button {
     border: solid 2px #d10000;
     cursor: pointer;
     color: #d10000;
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     outline: none;
 }
 
@@ -187,11 +187,11 @@ Button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 6px;
+    margin-bottom: 6px;
 }
 
 .column {
     flex: 1;
-    max-width: 35px;
+    max-width: 32px;
 }
