@@ -1,5 +1,5 @@
 <script setup></script>
 
-<template>template</template>
+<template>{{ $t('title.intro') }}</template>
 
 <style scoped></style>

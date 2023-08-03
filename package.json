@@ -13,6 +13,7 @@
     "@headlessui/vue": "^1.7.14",
     "@heroicons/vue": "^2.0.18",
     "vue": "^3.3.4",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.2.2",
     "vuetify": "^3.3.9",
     "vuex": "^4.0.2"
