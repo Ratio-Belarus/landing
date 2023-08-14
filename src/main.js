@@ -5,6 +5,7 @@ import store from './store'
 import vuetify from './vuetify'
 import { createI18n } from 'vue-i18n'
 import messages from './locales/messages'
+import './assets/styles/index.css'
 
 const app = createApp(App)
 
