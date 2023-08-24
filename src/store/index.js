@@ -25,6 +25,41 @@ const store = createStore({
           text: i18n.global.t('description.competition'),
           type: 'competition'
         }
+      ],
+      devCards: [
+        {
+          name: 'Нік',
+          position: 'Аўтар урокаў',
+          socNet: {
+            twitter: '#',
+            telegram: '#',
+            instagram: '#'
+          }
+        },
+        {
+          name: 'Алесь Вясёлка',
+          position: 'Рэдактар урокаў',
+          socNet: {
+            twitter: '#',
+            telegram: '#'
+          }
+        },
+        {
+          name: 'DzedBaradzed84',
+          position: 'Распрацоўшчык (React)',
+          socNet: {
+            twitter: '#',
+            telegram: '#',
+            instagram: '#',
+            twitch: '#',
+            github: '#',
+            linkedin: '#'
+          }
+        },
+        {
+          name: 'Ян Яновіч',
+          position: 'Тэсціроўшчык'
+        }
       ]
     }
   },

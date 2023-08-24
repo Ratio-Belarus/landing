@@ -6,7 +6,7 @@ const store = useStore()
 
 const functionCards = store.state.functionCards
 
-const devCards = []
+const devCards = store.state.devCards
 </script>
 
 <template>
