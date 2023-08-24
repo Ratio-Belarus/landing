@@ -3,8 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuetify from './vuetify'
-import { createI18n } from 'vue-i18n'
-import messages from './locales/messages'
+import i18n from './locales'
 import './assets/styles/index.css'
 import LogoIcon from './components/icons/LogoIcon.vue'
 import RulesIcon from './components/icons/RulesIcon.vue'
@@ -14,11 +13,6 @@ import CompetitionIcon from './components/icons/CompetitionIcon.vue'
 import TelegramIcon from './components/icons/TelegramIcon.vue'
 
 const app = createApp(App)
-
-const i18n = createI18n({
-  locale: 'be',
-  messages: messages
-})
 
 app.component('logo-icon', LogoIcon)
 app.component('rules-icon', RulesIcon)
