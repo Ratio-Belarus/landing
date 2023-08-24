@@ -1,9 +1,35 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
 import mobiles_img from '../assets/phones.png'
+
+const { t } = useI18n()
+
+const functionCards = [
+  {
+    title: t('subtitle.func.rules'),
+    text: t('description.rules'),
+    type: 'rules',
+  },
+  {
+    title: t('subtitle.func.practice'),
+    text: t('description.practice'),
+    type: 'practice',
+  },
+  {
+    title: t('subtitle.func.prize'),
+    text: t('description.prize'),
+    type: 'prize',
+  },
+  {
+    title: t('subtitle.func.competition'),
+    text: t('description.competition'),
+    type: 'competition',
+  },
+]
 </script>
 
 <template>
-  <v-container class="mx-0">
+  <v-container class="mx-auto w-100">
     <v-row>
       <v-col cols="6">
         <v-sheet class="bg-img-1">
@@ -31,12 +57,22 @@ import mobiles_img from '../assets/phones.png'
     </v-row>
     <v-row>
       <v-col cols="12">
-        <h3 class="text-h3 font-weight-bold">{{ $t('title.func') }}</h3>
-        <v-container class="mx-0">
-          <v-row> </v-row>
-        </v-container>
+        <h3 class="text-h4 font-weight-bold">{{ $t('title.func') }}</h3>
+      </v-col>
+      <v-col v-for="card in functionCards" :cols="6" class="pa-0">
+        <div class="d-flex align-center">
+          <component :is="card.type + '-icon'" :width="54" class="flex-0-0" />
+          <v-card elevation="0" :text="card.text">
+            <template v-slot:title>
+              <div class="d-flex align-center font-weight-bold">
+                <p class="text-28">{{ card.title }}</p>
+              </div>
+            </template>
+          </v-card>
+        </div>
       </v-col>
     </v-row>
+    <v-row> <v-col cols="12"> </v-col></v-row>
   </v-container>
 </template>
 
@@ -55,6 +91,6 @@ import mobiles_img from '../assets/phones.png'
   background-image: url('/src/assets/shadows-2.svg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 50%;
 }
 </style>
