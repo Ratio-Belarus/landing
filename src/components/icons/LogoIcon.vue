@@ -1,9 +1,9 @@
 <template>
   <svg
-    width="60"
-    height="60"
+    :width="props.width"
+    :height="props.height"
     viewBox="0 0 60 60"
-    fill="none"
+    :fill="props.color"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
   >
@@ -21,7 +21,19 @@
     </defs>
   </svg>
 </template>
-
-<script setup></script>
-
-<style scopes></style>
+<script setup>
+const props = defineProps({
+  width: {
+    type: [Number, String],
+    default: 60
+  },
+  height: {
+    type: [Number, String],
+    default: 60
+  },
+  color: {
+    type: String,
+    default: 'none'
+  }
+})
+</script>
