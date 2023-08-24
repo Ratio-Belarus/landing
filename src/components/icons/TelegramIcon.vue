@@ -1,7 +1,7 @@
 <template>
   <svg
     :width="props.width"
-    :height="props.height"
+    :height="props.width * 0.92"
     viewBox="0 0 24 23"
     :fill="props.color"
     xmlns="http://www.w3.org/2000/svg"
@@ -16,10 +16,6 @@
 <script setup>
 const props = defineProps({
   width: {
-    type: [Number, String],
-    default: 60
-  },
-  height: {
     type: [Number, String],
     default: 60
   },
