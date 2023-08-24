@@ -11,6 +11,7 @@ import RulesIcon from './components/icons/RulesIcon.vue'
 import PracticeIcon from './components/icons/PracticeIcon.vue'
 import PrizeIcon from './components/icons/PrizeIcon.vue'
 import CompetitionIcon from './components/icons/CompetitionIcon.vue'
+import TelegramIcon from './components/icons/TelegramIcon.vue'
 
 const app = createApp(App)
 
@@ -24,6 +25,7 @@ app.component('rules-icon', RulesIcon)
 app.component('practice-icon', PracticeIcon)
 app.component('prize-icon', PrizeIcon)
 app.component('competition-icon', CompetitionIcon)
+app.component('telegram-icon', TelegramIcon)
 
 app.use(router).use(store).use(vuetify).use(i18n)
 
