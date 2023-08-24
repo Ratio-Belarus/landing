@@ -3,3 +3,11 @@
 :root {
   --font-family:'Exo 2';
 }
+
+.text-28 {
+  font-size: 1.75rem;
+}
+
+.text-product-red {
+  color: #dd0426;
+}
