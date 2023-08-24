@@ -1,31 +1,12 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
 import mobiles_img from '../assets/phones.png'
+import { useStore } from 'vuex'
 
-const { t } = useI18n()
+const store = useStore()
 
-const functionCards = [
-  {
-    title: t('subtitle.func.rules'),
-    text: t('description.rules'),
-    type: 'rules',
-  },
-  {
-    title: t('subtitle.func.practice'),
-    text: t('description.practice'),
-    type: 'practice',
-  },
-  {
-    title: t('subtitle.func.prize'),
-    text: t('description.prize'),
-    type: 'prize',
-  },
-  {
-    title: t('subtitle.func.competition'),
-    text: t('description.competition'),
-    type: 'competition',
-  },
-]
+const functionCards = store.state.functionCards
+
+const devCards = []
 </script>
 
 <template>
@@ -72,7 +53,11 @@ const functionCards = [
         </div>
       </v-col>
     </v-row>
-    <v-row> <v-col cols="12"> </v-col></v-row>
+    <v-row>
+      <v-col cols="12">
+        <h3 class="text-h4 font-weight-bold">{{ $t('title.team') }}</h3>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
