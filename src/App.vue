@@ -8,13 +8,12 @@
 </template>
 
 <script setup>
+import { useStore } from 'vuex'
 import RatioHeader from './components/RatioHeader.vue'
 
-const networks = {
-  twitter: 'https://twitter.com',
-  mastodon: 'https://joinmastodon.org',
-  email: '#'
-}
+const store = useStore()
+
+const networks = store.state.networks
 </script>
 
 <style scoped>

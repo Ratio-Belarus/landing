@@ -4,6 +4,11 @@ import i18n from '../locales'
 const store = createStore({
   state() {
     return {
+      networks: {
+        twitter: 'https://twitter.com',
+        mastodon: 'https://joinmastodon.org',
+        email: '#'
+      },
       functionCards: [
         {
           title: i18n.global.t('subtitle.func.rules'),
