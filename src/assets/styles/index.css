@@ -4,6 +4,10 @@
   --font-family:'Exo 2';
 }
 
+.text-18 {
+  font-size: 1.125rem;
+}
+
 .text-28 {
   font-size: 1.75rem;
 }
