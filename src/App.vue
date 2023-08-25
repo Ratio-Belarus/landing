@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="max-width-1100 mx-auto">
     <RatioHeader :networks="networks" />
     <v-main>
       <router-view />
@@ -17,4 +17,8 @@ const networks = {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.max-width-1100 {
+  max-width: 1100px;
+}
+</style>
