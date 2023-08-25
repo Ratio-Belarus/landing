@@ -12,7 +12,7 @@ import RatioHeader from './components/RatioHeader.vue'
 
 const networks = {
   twitter: 'https://twitter.com',
-  instagram: 'https://www.instagram.com',
+  mastodon: 'https://joinmastodon.org',
   email: '#'
 }
 </script>

@@ -8,9 +8,12 @@
     </v-app-bar-title>
     <v-spacer />
     <RatioSocialNetworksBar :networks="props.networks" colorIcon="#DD0426" />
-    <v-btn color="#DD0426" variant="flat" class="text-white text-capitalize font-weight-medium">{{
-      $t('btn.join')
-    }}</v-btn>
+    <v-btn
+      color="#DD0426"
+      variant="flat"
+      class="text-white text-capitalize font-weight-medium ml-6"
+      >{{ $t('btn.join') }}</v-btn
+    >
   </v-app-bar>
 </template>
 

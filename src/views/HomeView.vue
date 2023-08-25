@@ -124,11 +124,16 @@ function submit() {
     <v-row>
       <v-col cols="12">
         <h3 class="text-h4 font-weight-bold">{{ $t('title.connect') }}</h3>
-        <v-form validate-on="submit" @submit.prevent="submit" class="mt-5">
+        <v-form
+          validate-on="submit"
+          @submit.prevent="submit"
+          class="mt-5 d-flex flex-column align-center justify-center"
+        >
           <v-text-field
             :label="$t('placeholder.communication')"
             variant="outlined"
             v-model="formFields.contact"
+            class="w-100"
           ></v-text-field>
           <v-textarea
             clearable
@@ -139,6 +144,7 @@ function submit() {
             :label="$t('placeholder.connect')"
             shaped
             v-model="formFields.message"
+            class="w-100"
           ></v-textarea>
           <v-btn
             color="#DD0426"
