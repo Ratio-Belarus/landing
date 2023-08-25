@@ -7,7 +7,7 @@
       </div>
     </v-app-bar-title>
     <v-spacer />
-    <RatioSocialNetworksBar :networks="props.networks" />
+    <RatioSocialNetworksBar :networks="props.networks" colorIcon="#DD0426" />
     <v-btn color="#DD0426" variant="flat" class="text-white text-capitalize font-weight-medium">{{
       $t('btn.join')
     }}</v-btn>
@@ -18,7 +18,7 @@
 import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
 
 const props = defineProps({
-  networks: Object,
+  networks: Object
 })
 </script>
 
