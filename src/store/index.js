@@ -5,9 +5,9 @@ const store = createStore({
   state() {
     return {
       networks: {
-        twitter: 'https://twitter.com',
-        mastodon: 'https://joinmastodon.org',
-        email: '#'
+        twitter: 'https://twitter.com/RatioBelarus',
+        mastodon: 'https://vkl.world/@ratio',
+        email: 'ratio.belarus@gmail.com'
       },
       functionCards: [
         {
