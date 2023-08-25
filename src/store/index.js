@@ -28,26 +28,29 @@ const store = createStore({
       ],
       devCards: [
         {
+          img: 'avatar.svg',
           name: 'Нік',
           position: 'Аўтар урокаў',
-          socNet: {
+          networks: {
             twitter: '#',
             telegram: '#',
             instagram: '#'
           }
         },
         {
+          img: 'avatar.svg',
           name: 'Алесь Вясёлка',
           position: 'Рэдактар урокаў',
-          socNet: {
+          networks: {
             twitter: '#',
             telegram: '#'
           }
         },
         {
+          img: 'avatar.svg',
           name: 'DzedBaradzed84',
           position: 'Распрацоўшчык (React)',
-          socNet: {
+          networks: {
             twitter: '#',
             telegram: '#',
             instagram: '#',
@@ -57,6 +60,7 @@ const store = createStore({
           }
         },
         {
+          img: 'avatar.svg',
           name: 'Ян Яновіч',
           position: 'Тэсціроўшчык'
         }
