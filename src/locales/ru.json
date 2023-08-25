@@ -29,6 +29,7 @@
     "send": "Отправить"
   },
   "placeholder": {
-    "connect": "Увядзіце тэкст..."
+    "connect": "Введите текст...",
+    "communication": "Способ связи с Вами (email, Telegram или иное)"
   }
 }
