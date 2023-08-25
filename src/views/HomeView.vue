@@ -1,12 +1,17 @@
 <script setup>
 import mobiles_img from '../assets/phones.png'
 import { useStore } from 'vuex'
+import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
 
 const store = useStore()
 
 const functionCards = store.state.functionCards
 
 const devCards = store.state.devCards
+
+function submit(event) {
+  console.log(event.target[0].value)
+}
 </script>
 
 <template>
@@ -40,6 +45,8 @@ const devCards = store.state.devCards
       <v-col cols="12">
         <h3 class="text-h4 font-weight-bold">{{ $t('title.func') }}</h3>
       </v-col>
+    </v-row>
+    <v-row>
       <v-col v-for="card in functionCards" :cols="6" class="pa-0">
         <div class="d-flex align-center">
           <component :is="card.type + '-icon'" :width="54" class="flex-0-0" />
@@ -58,13 +65,83 @@ const devCards = store.state.devCards
         <h3 class="text-h4 font-weight-bold">{{ $t('title.team') }}</h3>
       </v-col>
     </v-row>
+    <v-row class="dev-cards">
+      <v-col :cols="12">
+        <v-carousel
+          cycle
+          hide-delimiter-background
+          hide-delimiters
+          show-arrows="hover"
+          height="250"
+        >
+          <v-carousel-item
+            v-for="(card, i) in devCards"
+            :key="i"
+            class="d-flex justify-center align-center"
+          >
+            <v-card
+              elevation="0"
+              class="fill-height d-flex flex-column w-100 justify-center align-center px-16 pt-8"
+            >
+              <template v-slot:prepend>
+                <v-avatar size="112" :image="card.img"></v-avatar>
+              </template>
+              <template v-slot:title>
+                <p class="text-product-red text-28 font-italic font-weight-bold">{{ card.name }}</p>
+              </template>
+              <template v-slot:subtitle>
+                <p class="text-product-red font-weight-medium">{{ card.position }}</p>
+              </template>
+              <template v-slot:text>
+                <RatioSocialNetworksBar
+                  v-if="card.networks"
+                  :networks="card.networks"
+                  colorIcon="#DD0426"
+                  color="transparent"
+                />
+              </template>
+            </v-card>
+          </v-carousel-item>
+        </v-carousel>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12" class="d-flex justify-center align-center">
+        <v-btn
+          color="#DD0426"
+          variant="flat"
+          class="text-white text-capitalize font-weight-medium"
+          >{{ $t('btn.join') }}</v-btn
+        >
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12">
+        <h3 class="text-h4 font-weight-bold">{{ $t('title.connect') }}</h3>
+        <v-form validate-on="submit" @submit.prevent="submit">
+          <v-textarea
+            clearable
+            auto-grow
+            variant="outlined"
+            rows="4"
+            row-height="30"
+            :label="$t('placeholder.connect')"
+            shaped
+          ></v-textarea>
+          <v-btn
+            color="#DD0426"
+            type="submit"
+            variant="flat"
+            class="text-white text-capitalize font-weight-medium"
+            >{{ $t('btn.send') }}</v-btn
+          >
+        </v-form>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <style scoped>
-.text-product-red {
-  color: #dd0426;
-}
 .bg-img-1 {
   background-image: url('/src/assets/shadows-1.svg');
   background-position: center;
