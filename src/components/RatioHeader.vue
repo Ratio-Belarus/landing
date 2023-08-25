@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar color="white" elevation="0" scroll-behavior="hide" class="mx-">
+  <v-app-bar color="white" elevation="0" scroll-behavior="hide" scroll-threshold="5" absolute>
     <v-app-bar-title>
       <div class="d-flex align-center font-weight-bold">
         <logo-icon :width="60" />
