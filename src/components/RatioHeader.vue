@@ -11,6 +11,9 @@
     <v-btn
       color="#DD0426"
       variant="flat"
+      size="large"
+      :href="ratioFormLink"
+      target="blank"
       class="text-white text-capitalize font-weight-medium ml-6"
       >{{ $t('btn.join') }}</v-btn
     >
@@ -21,7 +24,8 @@
 import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
 
 const props = defineProps({
-  networks: Object
+  networks: Object,
+  ratioFormLink: String
 })
 </script>
 
