@@ -1,6 +1,6 @@
 <template>
   <v-app class="max-width-1100 mx-auto">
-    <RatioHeader :networks="networks" />
+    <RatioHeader :networks="networks" :ratio-form-link="ratioFormLink" />
     <v-main>
       <router-view />
     </v-main>
@@ -14,6 +14,7 @@ import RatioHeader from './components/RatioHeader.vue'
 const store = useStore()
 
 const networks = store.state.networks
+const ratioFormLink = store.state.ratioFormLink
 </script>
 
 <style scoped>
