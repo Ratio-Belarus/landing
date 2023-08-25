@@ -10,13 +10,10 @@ const functionCards = store.state.functionCards
 
 const devCards = store.state.devCards
 
-const formFields = ref({
-  contact: null,
-  message: null
-})
+const formFields = ref(store.state.formFields)
 
 function submit() {
-  console.log(formFields.value.contact, formFields.value.message)
+  store.dispatch('setFormFields', JSON.stringify(formFields.value))
 }
 </script>
 

@@ -64,17 +64,27 @@ const store = createStore({
           name: 'Ян Яновіч',
           position: 'Тэсціроўшчык'
         }
-      ]
+      ],
+      formFields: {
+        contact: null,
+        message: null
+      }
     }
   },
   mutations: {
     SET_FUNCTION_CARDS(state, newFunctionCards) {
       state.functionCards = newFunctionCards
+    },
+    SET_FORM_FIELDS(state, newFormFields) {
+      state.formFields = JSON.parse(newFormFields)
     }
   },
   actions: {
     setFunctionCards({ commit }, newFunctionCards) {
       commit('SET_FUNCTION_CARDS', newFunctionCards)
+    },
+    setFormFields({ commit }, newFormFields) {
+      commit('SET_FORM_FIELDS', newFormFields)
     }
   }
 })
