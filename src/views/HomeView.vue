@@ -2,6 +2,7 @@
 import mobiles_img from '../assets/phones.png'
 import { useStore } from 'vuex'
 import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
+import { ref } from 'vue'
 
 const store = useStore()
 
@@ -9,13 +10,18 @@ const functionCards = store.state.functionCards
 
 const devCards = store.state.devCards
 
-function submit(event) {
-  console.log(event.target[0].value)
+const formFields = ref({
+  contact: null,
+  message: null
+})
+
+function submit() {
+  console.log(formFields.value.contact, formFields.value.message)
 }
 </script>
 
 <template>
-  <v-container class="mx-auto w-100">
+  <v-container class="pa-0 mx-auto px-5">
     <v-row>
       <v-col cols="6">
         <v-sheet class="bg-img-1">
@@ -24,7 +30,7 @@ function submit(event) {
             <span class="text-product-red">{{ $t('title.intro.second') }} </span>
             {{ $t('title.intro.third') }}
           </h1>
-          <p class="text-medium-emphasis">
+          <p class="text-medium-emphasis mb-5">
             {{ $t('description.intro') }}
           </p>
           <v-btn
@@ -118,7 +124,12 @@ function submit(event) {
     <v-row>
       <v-col cols="12">
         <h3 class="text-h4 font-weight-bold">{{ $t('title.connect') }}</h3>
-        <v-form validate-on="submit" @submit.prevent="submit">
+        <v-form validate-on="submit" @submit.prevent="submit" class="mt-5">
+          <v-text-field
+            :label="$t('placeholder.communication')"
+            variant="outlined"
+            v-model="formFields.contact"
+          ></v-text-field>
           <v-textarea
             clearable
             auto-grow
@@ -127,6 +138,7 @@ function submit(event) {
             row-height="30"
             :label="$t('placeholder.connect')"
             shaped
+            v-model="formFields.message"
           ></v-textarea>
           <v-btn
             color="#DD0426"
@@ -151,8 +163,8 @@ function submit(event) {
 
 .bg-img-2 {
   background-image: url('/src/assets/shadows-2.svg');
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: 50%;
+  background-size: 70%;
 }
 </style>
