@@ -7,8 +7,8 @@ import { ref } from 'vue'
 const store = useStore()
 
 const functionCards = store.state.functionCards
-
 const devCards = store.state.devCards
+const ratioFormLink = store.state.ratioFormLink
 
 const formFields = ref(store.state.formFields)
 
@@ -33,6 +33,9 @@ function submit() {
           <v-btn
             color="#DD0426"
             variant="flat"
+            size="large"
+            :href="ratioFormLink"
+            target="blank"
             class="text-white text-capitalize font-weight-medium"
             >{{ $t('btn.join') }}</v-btn
           >
@@ -113,13 +116,16 @@ function submit() {
         <v-btn
           color="#DD0426"
           variant="flat"
+          size="large"
+          :href="ratioFormLink"
+          target="blank"
           class="text-white text-capitalize font-weight-medium"
           >{{ $t('btn.join') }}</v-btn
         >
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12">
+      <v-col cols="12" class="mb-15">
         <h3 class="text-h4 font-weight-bold">{{ $t('title.connect') }}</h3>
         <v-form
           validate-on="submit"
@@ -147,6 +153,7 @@ function submit() {
             color="#DD0426"
             type="submit"
             variant="flat"
+            size="large"
             class="text-white text-capitalize font-weight-medium"
             >{{ $t('btn.send') }}</v-btn
           >
