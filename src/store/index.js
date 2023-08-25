@@ -9,6 +9,8 @@ const store = createStore({
         mastodon: 'https://vkl.world/@ratio',
         email: 'ratio.belarus@gmail.com'
       },
+      ratioFormLink:
+        'https://docs.google.com/forms/d/e/1FAIpQLScFgIHcn-tjQENR3SkQXScn4HrlUxcV_LMEBN6Lu7UpCA8q9Q/viewform?pli=1',
       functionCards: [
         {
           title: i18n.global.t('subtitle.func.rules'),
