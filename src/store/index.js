@@ -5,7 +5,6 @@ import axios from 'axios'
 const store = createStore({
   state() {
     return {
-      language: 'be',
       networks: {
         twitter: 'https://twitter.com/RatioBelarus',
         mastodon: 'https://vkl.world/@ratio',
