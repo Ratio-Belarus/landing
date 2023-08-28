@@ -3,7 +3,7 @@
     icon
     v-for="(elem, key) in props.networks"
     :key="key"
-    :href="elem"
+    :href="key == 'email' ? 'mailto:' + elem : elem"
     target="blank"
     elevation="0"
     :color="color"
