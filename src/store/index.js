@@ -1,5 +1,4 @@
 import { createStore } from 'vuex'
-import i18n from '../locales'
 import axios from 'axios'
 
 const store = createStore({
@@ -12,28 +11,6 @@ const store = createStore({
       },
       ratioFormLink:
         'https://docs.google.com/forms/d/e/1FAIpQLScFgIHcn-tjQENR3SkQXScn4HrlUxcV_LMEBN6Lu7UpCA8q9Q/viewform?pli=1',
-      functionCards: [
-        {
-          title: i18n.global.t('subtitle.func.rules'),
-          text: i18n.global.t('description.rules'),
-          type: 'rules'
-        },
-        {
-          title: i18n.global.t('subtitle.func.practice'),
-          text: i18n.global.t('description.practice'),
-          type: 'practice'
-        },
-        {
-          title: i18n.global.t('subtitle.func.prize'),
-          text: i18n.global.t('description.prize'),
-          type: 'prize'
-        },
-        {
-          title: i18n.global.t('subtitle.func.competition'),
-          text: i18n.global.t('description.competition'),
-          type: 'competition'
-        }
-      ],
       devCards: [
         {
           img: 'avatar.svg',
@@ -80,6 +57,10 @@ const store = createStore({
       ],
       formFields: {
         contact: null,
+        message: null
+      },
+      error: {
+        status: false,
         message: null
       }
     }
