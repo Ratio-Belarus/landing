@@ -1,7 +1,7 @@
 <script setup>
 import mobiles_img from '../assets/phones.png'
 import { useStore } from 'vuex'
-import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
+// import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
 import { ref } from 'vue'
 
 const store = useStore()
@@ -13,7 +13,7 @@ const ratioFormLink = store.state.ratioFormLink
 const formFields = ref(store.state.formFields)
 
 function submit() {
-  store.dispatch('setFormFields', JSON.stringify(formFields.value))
+  store.dispatch('setFormFields', formFields.value)
 }
 </script>
 

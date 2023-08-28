@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import i18n from '../locales'
+import axios from 'axios'
 
 const store = createStore({
   state() {
@@ -88,7 +89,7 @@ const store = createStore({
       state.functionCards = newFunctionCards
     },
     SET_FORM_FIELDS(state, newFormFields) {
-      state.formFields = JSON.parse(newFormFields)
+      state.formFields = newFormFields
     }
   },
   actions: {
@@ -97,6 +98,10 @@ const store = createStore({
     },
     setFormFields({ commit }, newFormFields) {
       commit('SET_FORM_FIELDS', newFormFields)
+      axios
+        .post('https://qa-ratio-by.herokuapp.com/contact_us', newFormFields)
+        .then(() => console.log('done'))
+        .catch((err) => console.log(err))
     }
   }
 })
