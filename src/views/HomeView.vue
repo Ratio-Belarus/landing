@@ -71,44 +71,28 @@ function submit() {
         <h3 class="text-h4 font-weight-bold">{{ $t('title.team') }}</h3>
       </v-col>
     </v-row>
-    <v-row class="dev-cards">
-      <v-col :cols="12">
-        <v-carousel
-          cycle
-          hide-delimiter-background
-          hide-delimiters
-          show-arrows="hover"
-          height="250"
-        >
-          <v-carousel-item
-            v-for="(card, i) in devCards"
-            :key="i"
-            class="d-flex justify-center align-center"
-          >
-            <v-card
-              elevation="0"
-              class="fill-height d-flex flex-column w-100 justify-center align-center px-16 pt-8"
-            >
-              <template v-slot:prepend>
-                <v-avatar size="112" :image="card.img"></v-avatar>
-              </template>
-              <template v-slot:title>
-                <p class="text-product-red text-28 font-italic font-weight-bold">{{ card.name }}</p>
-              </template>
-              <template v-slot:subtitle>
-                <p class="text-product-red font-weight-medium">{{ card.position }}</p>
-              </template>
-              <template v-slot:text>
-                <RatioSocialNetworksBar
-                  v-if="card.networks"
-                  :networks="card.networks"
-                  colorIcon="#DD0426"
-                  color="transparent"
-                />
-              </template>
-            </v-card>
-          </v-carousel-item>
-        </v-carousel>
+    <v-row>
+      <v-col v-for="(card, i) in devCards" :key="i" :cols="6" class="col-dev">
+        <v-card elevation="0" class="fill-height">
+          <template v-slot:prepend>
+            <v-avatar size="112" :image="card.img"></v-avatar>
+          </template>
+          <template v-slot:title>
+            <p class="text-product-red text-28 font-italic font-weight-bold">{{ card.name }}</p>
+          </template>
+          <template v-slot:subtitle>
+            <p class="text-product-red font-weight-medium">{{ card.position }}</p>
+          </template>
+          <template v-slot:text>
+            <!-- Сommented out temporarily as there is no data yet-->
+            <!-- <RatioSocialNetworksBar
+              v-if="card.networks"
+              :networks="card.networks"
+              colorIcon="#DD0426"
+              color="transparent"
+            /> -->
+          </template>
+        </v-card>
       </v-col>
     </v-row>
     <v-row>
@@ -176,5 +160,13 @@ function submit() {
   background-position: top;
   background-repeat: no-repeat;
   background-size: 70%;
+}
+
+.col-dev:nth-child(3n + 1) > .v-card {
+  background-color: #dd0426;
+}
+
+.col-dev:nth-child(3n + 1) > .v-card .text-product-red {
+  color: white;
 }
 </style>
