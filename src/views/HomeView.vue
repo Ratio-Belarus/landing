@@ -162,11 +162,13 @@ function submit() {
   background-size: 70%;
 }
 
-.col-dev:nth-child(3n + 1) > .v-card {
+.col-dev:nth-child(4n + 1) > .v-card,
+.col-dev:nth-child(4n) > .v-card {
   background-color: #dd0426;
 }
 
-.col-dev:nth-child(3n + 1) > .v-card .text-product-red {
+.col-dev:nth-child(4n + 1) > .v-card .text-product-red,
+.col-dev:nth-child(4n) > .v-card .text-product-red {
   color: white;
 }
 </style>

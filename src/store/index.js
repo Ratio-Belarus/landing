@@ -70,6 +70,11 @@ const store = createStore({
           img: 'avatar.svg',
           name: 'Ян Яновіч',
           position: 'Тэсціроўшчык'
+        },
+        {
+          img: 'avatar.svg',
+          name: 'deadbeathd07',
+          position: 'Распрацоўшчык (Vue)'
         }
       ],
       formFields: {
