@@ -29,7 +29,7 @@
       </template>
       <v-list>
         <v-list-item v-for="(language, index) in languages" :key="index">
-          <v-list-item-title class="text-uppercase" @click="chooseLang">{{
+          <v-list-item-title class="text-uppercase text-center" @click="chooseLang">{{
             language
           }}</v-list-item-title>
         </v-list-item>
@@ -40,7 +40,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useStore } from 'vuex'
+import { useI18n } from 'vue-i18n'
 import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
 
 const props = defineProps({
@@ -50,12 +50,14 @@ const props = defineProps({
 
 const languages = ['be', 'ru', 'en']
 
-const store = useStore()
+const i18n = useI18n()
 
-const usedLang = ref(store.state.language)
+const usedLang = ref(i18n.locale)
 
 function chooseLang(e) {
-  console.log(e.target.innerText.toLowerCase())
+  let newLang = e.target.innerText.toLowerCase()
+  usedLang.value = newLang
+  i18n.locale = newLang
 }
 </script>
 
