@@ -98,6 +98,7 @@ const store = createStore({
     },
     setFormFields({ commit }, newFormFields) {
       commit('SET_FORM_FIELDS', newFormFields)
+      // This origin point will need to be deleted in the future, as it is a test, and replace it with a valid one
       axios
         .post('https://qa-ratio-by.herokuapp.com/contact_us', newFormFields)
         .then(() => console.log('done'))
