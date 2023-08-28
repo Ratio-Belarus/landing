@@ -4,6 +4,7 @@
     v-for="(elem, key) in props.networks"
     :key="key"
     :href="elem"
+    target="blank"
     elevation="0"
     :color="color"
   >
