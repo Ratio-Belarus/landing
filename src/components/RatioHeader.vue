@@ -58,6 +58,7 @@ function chooseLang(e) {
   let newLang = e.target.innerText.toLowerCase()
   usedLang.value = newLang
   i18n.locale = newLang
+  localStorage.lang = newLang
 }
 </script>
 
