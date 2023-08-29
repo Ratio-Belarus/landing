@@ -15,3 +15,7 @@
 .text-product-red {
   color: #dd0426;
 }
+
+.text-wrap {
+  white-space: normal;
+}
