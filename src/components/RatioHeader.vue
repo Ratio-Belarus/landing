@@ -11,28 +11,26 @@
       colorIcon="#DD0426"
       :hidden="widthClient <= 580"
     />
-    <v-btn
-      color="#DD0426"
-      variant="flat"
-      size="large"
-      :href="ratioFormLink"
-      target="blank"
-      class="text-white text-capitalize font-weight-medium ml-lg-12 ml-md-6 ml-sm-2 btn-large"
-      >{{ $t('btn.join') }}</v-btn
-    >
+    <RatioBtn :text="$t('btn.join')" />
     <v-menu>
       <template v-slot:activator="{ props }">
         <v-btn
           variant="outlined"
-          size="large"
-          class="text-product-red text-uppercase font-weight-medium ml-6"
+          :size="
+            widthClient <= 450
+              ? 'small'
+              : widthClient > 450 && widthClient <= 960
+              ? 'large'
+              : 'x-large'
+          "
+          class="text-product-red text-uppercase font-weight-medium ml-lg-12 btn-lang"
           v-bind="props"
           >{{ usedLang }}
         </v-btn>
       </template>
       <v-list>
         <v-list-item v-for="(language, index) in languages" :key="index">
-          <v-list-item-title class="text-uppercase text-center ml-sm-2" @click="chooseLang">{{
+          <v-list-item-title class="text-uppercase text-center" @click="chooseLang">{{
             language
           }}</v-list-item-title>
         </v-list-item>
@@ -42,9 +40,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useStore } from 'vuex'
 import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
+import RatioBtn from './RatioBtn.vue'
 
 const props = defineProps({
   networks: Object,
@@ -52,11 +52,12 @@ const props = defineProps({
 })
 
 const languages = ['be', 'ru', 'en']
-const widthClient = ref(window.innerWidth)
+const widthClient = computed(() => store.state.widthClient)
 
 window.addEventListener('resize', resizeHandler)
 
 const i18n = useI18n()
+const store = useStore()
 
 const usedLang = ref(i18n.locale)
 
@@ -68,7 +69,7 @@ function chooseLang(e) {
 }
 
 function resizeHandler() {
-  widthClient.value = window.innerWidth
+  store.dispatch('setWidthClient', window.innerWidth)
 }
 </script>
 
