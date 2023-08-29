@@ -4,6 +4,10 @@
   --font-family:'Exo 2';
 }
 
+.mb-25 {
+  margin-bottom: 6.25rem;
+}
+
 .text-18 {
   font-size: 1.125rem;
 }
@@ -18,23 +22,4 @@
 
 .text-wrap {
   white-space: normal;
-}
-
-.btn-large.v-btn--size-large {
-  min-width: 180px;
-}
-@media (max-width: 650px) {
-  .btn-large.v-btn--size-large {
-  min-width: 78px;
-}
-}
-
-.v-btn.v-btn--density-default {
-  height: calc(var(--v-btn-height) + 16px);
-}
-
-@media (max-width: 650px) {
-  .v-btn.v-btn--density-default {
-  height: calc(var(--v-btn-height) + 0px);
-}
 }
