@@ -60,7 +60,7 @@ function submit() {
             size="large"
             :href="ratioFormLink"
             target="blank"
-            class="text-white text-capitalize font-weight-medium"
+            class="text-white text-capitalize font-weight-medium btn-large"
             >{{ $t('btn.join') }}</v-btn
           >
         </v-sheet>
@@ -134,7 +134,7 @@ function submit() {
               size="large"
               :href="ratioFormLink"
               target="blank"
-              class="text-white text-capitalize font-weight-medium"
+              class="text-white text-capitalize font-weight-medium btn-large"
               >{{ $t('btn.join') }}</v-btn
             >
           </v-col>
@@ -171,7 +171,7 @@ function submit() {
             type="submit"
             variant="flat"
             size="large"
-            class="text-white text-capitalize font-weight-medium"
+            class="text-white text-capitalize font-weight-medium btn-large"
             >{{ $t('btn.send') }}</v-btn
           >
         </v-form>
