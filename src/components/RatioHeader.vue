@@ -6,14 +6,18 @@
         <p class="text-28 text-product-red">Рацыя</p>
       </div>
     </v-app-bar-title>
-    <RatioSocialNetworksBar :networks="props.networks" colorIcon="#DD0426" />
+    <RatioSocialNetworksBar
+      :networks="props.networks"
+      colorIcon="#DD0426"
+      :hidden="widthClient <= 580"
+    />
     <v-btn
       color="#DD0426"
       variant="flat"
       size="large"
       :href="ratioFormLink"
       target="blank"
-      class="text-white text-capitalize font-weight-medium ml-6"
+      class="text-white text-capitalize font-weight-medium ml-lg-12 ml-md-6 ml-sm-2 btn-large"
       >{{ $t('btn.join') }}</v-btn
     >
     <v-menu>
@@ -28,7 +32,7 @@
       </template>
       <v-list>
         <v-list-item v-for="(language, index) in languages" :key="index">
-          <v-list-item-title class="text-uppercase text-center" @click="chooseLang">{{
+          <v-list-item-title class="text-uppercase text-center ml-sm-2" @click="chooseLang">{{
             language
           }}</v-list-item-title>
         </v-list-item>
@@ -48,6 +52,9 @@ const props = defineProps({
 })
 
 const languages = ['be', 'ru', 'en']
+const widthClient = ref(window.innerWidth)
+
+window.addEventListener('resize', resizeHandler)
 
 const i18n = useI18n()
 
@@ -58,6 +65,10 @@ function chooseLang(e) {
   usedLang.value = newLang
   i18n.locale = newLang
   localStorage.lang = newLang
+}
+
+function resizeHandler() {
+  widthClient.value = window.innerWidth
 }
 </script>
 
