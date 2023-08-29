@@ -4,6 +4,7 @@ import axios from 'axios'
 const store = createStore({
   state() {
     return {
+      widthClient: null,
       networks: {
         twitter: 'https://twitter.com/RatioBelarus',
         mastodon: 'https://vkl.world/@ratio',
@@ -67,6 +68,9 @@ const store = createStore({
     }
   },
   mutations: {
+    SET_WIDTH_CLIENT(state, newWidthClient) {
+      state.widthClient = newWidthClient
+    },
     SET_FUNCTION_CARDS(state, newFunctionCards) {
       state.functionCards = newFunctionCards
     },
@@ -75,6 +79,9 @@ const store = createStore({
     }
   },
   actions: {
+    setWidthClient({ commit }, newWidthClient) {
+      commit('SET_WIDTH_CLIENT', newWidthClient)
+    },
     setFunctionCards({ commit }, newFunctionCards) {
       commit('SET_FUNCTION_CARDS', newFunctionCards)
     },
