@@ -1,7 +1,7 @@
 <script setup>
 import mobiles_img from '../assets/phones.png'
 import { useStore } from 'vuex'
-// import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
+import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -109,12 +109,11 @@ function submit() {
           </template>
           <template v-slot:text>
             <!-- Сommented out temporarily as there is no data yet-->
-            <!-- <RatioSocialNetworksBar
+            <RatioSocialNetworksBar
               v-if="card.networks"
               :networks="card.networks"
-              colorIcon="#DD0426"
               color="transparent"
-            /> -->
+            />
           </template>
         </v-card>
       </v-col>
@@ -171,7 +170,7 @@ function submit() {
   </v-container>
 </template>
 
-<style scoped>
+<style>
 .bg-img-1 {
   background-image: url('/src/assets/shadows-1.svg');
   background-position: center;
@@ -189,6 +188,15 @@ function submit() {
 .col-dev:nth-child(4n + 1) > .v-card,
 .col-dev:nth-child(4n) > .v-card {
   background-color: #dd0426;
+}
+
+.col-dev .icon {
+  color: #dd0426;
+}
+
+.col-dev:nth-child(4n + 1) > .v-card .icon,
+.col-dev:nth-child(4n) > .v-card .icon {
+  color: white;
 }
 
 .col-dev:nth-child(4n + 1) > .v-card .text-product-red,
