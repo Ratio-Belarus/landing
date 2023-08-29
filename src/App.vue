@@ -1,5 +1,5 @@
 <template>
-  <v-app class="max-width-1100 mx-auto">
+  <v-app class="max-width-1100 mx-auto mt-10 mb-25">
     <RatioHeader :networks="networks" :ratio-form-link="ratioFormLink" />
     <v-main>
       <router-view />
@@ -15,6 +15,8 @@ const store = useStore()
 
 const networks = store.state.networks
 const ratioFormLink = store.state.ratioFormLink
+
+store.dispatch('setWidthClient', window.innerWidth)
 </script>
 
 <style scoped>
