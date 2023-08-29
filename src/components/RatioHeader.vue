@@ -6,7 +6,6 @@
         <p class="text-28 text-product-red">Рацыя</p>
       </div>
     </v-app-bar-title>
-    <v-spacer />
     <RatioSocialNetworksBar :networks="props.networks" colorIcon="#DD0426" />
     <v-btn
       color="#DD0426"
