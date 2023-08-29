@@ -21,7 +21,7 @@ const props = defineProps({
   },
   color: {
     type: [Number, String],
-    default: 'none'
+    default: 'white'
   }
 })
 </script>
