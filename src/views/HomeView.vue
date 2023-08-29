@@ -102,10 +102,12 @@ function submit() {
             <v-avatar size="112" :image="card.img"></v-avatar>
           </template>
           <template v-slot:title>
-            <p class="text-product-red text-28 font-italic font-weight-bold">{{ card.name }}</p>
+            <p class="text-product-red text-28 font-italic font-weight-bold text-wrap">
+              {{ card.name }}
+            </p>
           </template>
           <template v-slot:subtitle>
-            <p class="text-product-red font-weight-medium">{{ card.position }}</p>
+            <p class="text-product-red font-weight-medium text-wrap">{{ card.position }}</p>
           </template>
           <template v-slot:text>
             <!-- Сommented out temporarily as there is no data yet-->
