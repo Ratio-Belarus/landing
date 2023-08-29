@@ -8,9 +8,9 @@
     elevation="0"
     :color="color"
   >
-    <v-icon :color="colorIcon" v-if="key == 'email'">mdi-{{ key }}-outline</v-icon>
-    <telegram-icon :color="colorIcon" v-else-if="key == 'telegram'" />
-    <v-icon :color="colorIcon" v-else>mdi-{{ key }}</v-icon>
+    <v-icon :color="colorIcon" v-if="key == 'email'" class="icon">mdi-{{ key }}-outline</v-icon>
+    <telegram-icon :color="colorIcon" v-else-if="key == 'telegram'" class="icon" />
+    <v-icon :color="colorIcon" v-else class="icon">mdi-{{ key }}</v-icon>
   </v-btn>
 </template>
 
