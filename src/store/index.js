@@ -12,47 +12,48 @@ const store = createStore({
       ratioFormLink:
         'https://docs.google.com/forms/d/e/1FAIpQLScFgIHcn-tjQENR3SkQXScn4HrlUxcV_LMEBN6Lu7UpCA8q9Q/viewform?pli=1',
       devCards: [
+        // {
+        //   img: 'avatar.svg',
+        //   name: 'Нік',
+        //   position: 'Аўтар урокаў',
+        //   networks: {
+        //     twitter: '#',
+        //     telegram: '#',
+        //     instagram: '#'
+        //   }
+        // },
+        // {
+        //   img: 'avatar.svg',
+        //   name: 'Алесь Вясёлка',
+        //   position: 'Рэдактар урокаў',
+        //   networks: {
+        //     twitter: '#',
+        //     telegram: '#'
+        //   }
+        // },
         {
           img: 'avatar.svg',
-          name: 'Нік',
-          position: 'Аўтар урокаў',
+          name: 'Plistačka',
+          position: 'Распрацоўшчыца (Python, React Native), менеджар праекта, дызайнер',
           networks: {
-            twitter: '#',
-            telegram: '#',
-            instagram: '#'
+            twitter: 'https://twitter.com/plistacka',
+            github: 'https://github.com/Plistachka',
+            mastodon: 'https://vkl.world/@plistachka',
+            patreon: 'https://www.patreon.com/plistachka'
           }
         },
-        {
-          img: 'avatar.svg',
-          name: 'Алесь Вясёлка',
-          position: 'Рэдактар урокаў',
-          networks: {
-            twitter: '#',
-            telegram: '#'
-          }
-        },
-        {
-          img: 'avatar.svg',
-          name: 'DzedBaradzed84',
-          position: 'Распрацоўшчык (React)',
-          networks: {
-            twitter: '#',
-            telegram: '#',
-            instagram: '#',
-            twitch: '#',
-            github: '#',
-            linkedin: '#'
-          }
-        },
-        {
-          img: 'avatar.svg',
-          name: 'Ян Яновіч',
-          position: 'Тэсціроўшчык'
-        },
+        // {
+        //   img: 'avatar.svg',
+        //   name: 'Ян Яновіч',
+        //   position: 'Тэсціроўшчык'
+        // },
         {
           img: 'avatar.svg',
           name: 'deadbeathd07',
-          position: 'Распрацоўшчык (Vue)'
+          position: 'Распрацоўшчыца (Vue, Laravel)',
+          networks: {
+            github: 'https://github.com/deadbeathd07'
+          }
         }
       ],
       formFields: {
