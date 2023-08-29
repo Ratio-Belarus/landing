@@ -2,6 +2,7 @@
 import mobiles_img from '../assets/phones.png'
 import { useStore } from 'vuex'
 import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
+import RatioBtn from '../components/RatioBtn.vue'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -54,15 +55,7 @@ function submit() {
           <p class="text-medium-emphasis mb-5">
             {{ $t('description.intro') }}
           </p>
-          <v-btn
-            color="#DD0426"
-            variant="flat"
-            size="large"
-            :href="ratioFormLink"
-            target="blank"
-            class="text-white text-capitalize font-weight-medium btn-large"
-            >{{ $t('btn.join') }}</v-btn
-          >
+          <RatioBtn :text="$t('btn.join')" />
         </v-sheet>
       </v-col>
       <v-col cols="6">
@@ -128,15 +121,7 @@ function submit() {
         </v-row>
         <v-row>
           <v-col cols="12" class="d-flex justify-center align-center">
-            <v-btn
-              color="#DD0426"
-              variant="flat"
-              size="large"
-              :href="ratioFormLink"
-              target="blank"
-              class="text-white text-capitalize font-weight-medium btn-large"
-              >{{ $t('btn.join') }}</v-btn
-            >
+            <RatioBtn :text="$t('btn.join')" />
           </v-col>
         </v-row>
       </v-container>
@@ -166,14 +151,7 @@ function submit() {
             v-model="formFields.message"
             class="w-100"
           ></v-textarea>
-          <v-btn
-            color="#DD0426"
-            type="submit"
-            variant="flat"
-            size="large"
-            class="text-white text-capitalize font-weight-medium btn-large"
-            >{{ $t('btn.send') }}</v-btn
-          >
+          <RatioBtn :text="$t('btn.send')" />
         </v-form>
       </v-col>
     </v-row>
