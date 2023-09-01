@@ -23,3 +23,15 @@
 .text-wrap {
   white-space: normal;
 }
+
+@media (max-width: 600px) {
+  .ml-xs-2 {
+    margin-left: 8px;
+  }
+  .mt-xs-3 {
+    margin-top: 12px;
+  }
+  .mb-xs-4 {
+    margin-bottom: 16px;
+  }
+}
