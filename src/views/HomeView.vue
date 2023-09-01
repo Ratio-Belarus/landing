@@ -33,8 +33,6 @@ const functionCards = computed(() => [
   }
 ])
 const devCards = store.state.devCards
-const ratioFormLink = store.state.ratioFormLink
-
 const formFields = ref(store.state.formFields)
 
 function submit() {
@@ -127,7 +125,7 @@ function submit() {
       </v-container>
     </v-row>
     <v-row>
-      <v-col cols="12" class="mb-15">
+      <v-col cols="12">
         <h3 class="text-h4 font-weight-bold">{{ $t('title.connect') }}</h3>
         <v-form
           validate-on="submit"
