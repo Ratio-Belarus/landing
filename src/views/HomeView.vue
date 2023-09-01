@@ -41,26 +41,28 @@ function submit() {
 </script>
 
 <template>
-  <v-container class="px-4 mx-auto py-1">
+  <v-container class="px-4 mx-auto">
     <v-row>
-      <v-col cols="6">
-        <v-sheet class="bg-img-1 pt-32 pb-42">
-          <h1 class="text-h2 font-weight-bold product-font">
+      <v-sheet class="custom-container pa-4 pt-lg-32 pb-lg-65 pt-md-16 pb-md-21 pt-xs-4 pb-xs-3">
+        <v-sheet class="elem-1 bg-img-1 h-100 d-flex justify-center align-center">
+          <h1
+            class="text-xs-h5 text-sm-h4 text-md-h3 text-lg-h2 font-weight-bold product-font mb-6"
+          >
             {{ $t('title.intro.first') }}
             <span class="text-product-red">{{ $t('title.intro.second') }} </span>
             {{ $t('title.intro.third') }}
           </h1>
-          <p class="text-medium-emphasis mb-5">
+        </v-sheet>
+        <v-sheet class="elem-3 bg-img-2">
+          <v-img :src="mobiles_img"></v-img>
+        </v-sheet>
+        <v-sheet class="elem-2">
+          <p class="text-medium-emphasis mb-5 text-base text-lg">
             {{ $t('description.intro') }}
           </p>
           <RatioBtn :text="$t('btn.join')" />
         </v-sheet>
-      </v-col>
-      <v-col cols="6">
-        <v-sheet class="bg-img-2">
-          <v-img :src="mobiles_img"></v-img>
-        </v-sheet>
-      </v-col>
+      </v-sheet>
     </v-row>
     <v-row>
       <v-container class="pa-0">
@@ -159,15 +161,14 @@ function submit() {
 <style scoped>
 .bg-img-1 {
   background-image: url('/src/assets/shadows-1.svg');
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .bg-img-2 {
   background-image: url('/src/assets/shadows-2.svg');
-  background-position: top;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: 70%;
 }
 </style>
