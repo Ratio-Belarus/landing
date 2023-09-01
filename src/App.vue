@@ -1,5 +1,7 @@
 <template>
-  <v-app class="max-width-1100 mx-auto mt-10 mb-25">
+  <v-app
+    class="max-width-1100 mx-auto mt-lg-10 mb-lg-25 mt-md-6 mb-md-15 mt-sm-3 mb-sm-8 mt-xs-3 mb-xs-4"
+  >
     <RatioHeader :networks="networks" :ratio-form-link="ratioFormLink" />
     <v-main>
       <router-view />
