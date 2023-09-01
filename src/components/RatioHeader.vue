@@ -1,5 +1,12 @@
 <template>
-  <v-app-bar color="white" elevation="0" scroll-behavior="hide" scroll-threshold="5" absolute>
+  <v-app-bar
+    color="white"
+    elevation="0"
+    scroll-behavior="hide"
+    scroll-threshold="5"
+    absolute
+    class="ratio-header"
+  >
     <v-app-bar-title>
       <div class="d-flex align-center font-weight-bold">
         <logo-icon :width="60" />
@@ -11,7 +18,7 @@
       colorIcon="#DD0426"
       :hidden="widthClient <= 580"
     />
-    <RatioBtn :text="$t('btn.join')" />
+    <RatioBtn :text="$t('btn.join')" class="ml-lg-12 ml-md-4 ml-sm-2 ml-xs-2" />
     <v-menu>
       <template v-slot:activator="{ props }">
         <v-btn
@@ -23,7 +30,7 @@
               ? 'large'
               : 'x-large'
           "
-          class="text-product-red text-uppercase font-weight-medium ml-lg-12 btn-lang"
+          class="text-product-red text-uppercase font-weight-medium ml-lg-12 ml-md-4 ml-sm-2 ml-xs-2 btn-lang"
           v-bind="props"
           >{{ usedLang }}
         </v-btn>
@@ -73,4 +80,8 @@ function resizeHandler() {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.ratio-header .v-toolbar__content > .v-btn:last-child {
+  margin-inline-end: 16px;
+}
+</style>
