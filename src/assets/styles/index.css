@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,500;0,700;1,700&display=swap');
 
 :root {
-  --font-family:'Exo 2';
+  --font-family: 'Exo 2', sans-serif;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.pt-32 {
+  padding-top: 128px;
+}
+
+.pb-42 {
+  padding-bottom: 168px;
 }
 
 .mb-25 {
@@ -24,6 +33,29 @@
   white-space: normal;
 }
 
+.col-dev:nth-child(4n + 1) > .v-card,
+.col-dev:nth-child(4n) > .v-card {
+  background-color: #dd0426;
+}
+
+.col-dev .icon {
+  color: #dd0426;
+}
+
+.col-dev:nth-child(4n + 1) > .v-card .icon,
+.col-dev:nth-child(4n) > .v-card .icon {
+  color: white;
+}
+
+.col-dev:nth-child(4n + 1) > .v-card .text-product-red,
+.col-dev:nth-child(4n) > .v-card .text-product-red {
+  color: white;
+}
+
+.product-font {
+  font-family: 'Exo 2', sans-serif !important;
+}
+
 @media (max-width: 600px) {
   .ml-xs-2 {
     margin-left: 8px;
@@ -33,5 +65,11 @@
   }
   .mb-xs-4 {
     margin-bottom: 16px;
+  }
+}
+
+@media (min-width: 960px) {
+  .v-container {
+    max-width: 1100px;
   }
 }
