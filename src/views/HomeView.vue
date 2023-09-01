@@ -43,7 +43,9 @@ function submit() {
 <template>
   <v-container class="px-4 mx-auto">
     <v-row>
-      <v-sheet class="custom-container pa-4 pt-lg-32 pb-lg-65 pt-md-16 pb-md-21 pt-xs-4 pb-xs-3">
+      <v-sheet
+        class="custom-container pa-4 pt-lg-32 pb-lg-65 pt-md-16 pb-md-21 pt-sm-8 pb-sm-10 pt-xs-4 pb-xs-3"
+      >
         <v-sheet class="elem-1 bg-img-1 h-100 d-flex justify-center align-center">
           <h1
             class="text-xs-h5 text-sm-h4 text-md-h3 text-lg-h2 font-weight-bold product-font mb-6"
