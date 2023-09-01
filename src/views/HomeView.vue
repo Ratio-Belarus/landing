@@ -41,11 +41,11 @@ function submit() {
 </script>
 
 <template>
-  <v-container class="pa-0 mx-auto px-5">
+  <v-container class="px-4 mx-auto py-1">
     <v-row>
       <v-col cols="6">
-        <v-sheet class="bg-img-1">
-          <h1 class="text-h2 font-weight-bold">
+        <v-sheet class="bg-img-1 pt-32 pb-42">
+          <h1 class="text-h2 font-weight-bold product-font">
             {{ $t('title.intro.first') }}
             <span class="text-product-red">{{ $t('title.intro.second') }} </span>
             {{ $t('title.intro.third') }}
@@ -66,7 +66,7 @@ function submit() {
       <v-container class="pa-0">
         <v-row>
           <v-col cols="12">
-            <h3 class="text-h4 font-weight-bold">{{ $t('title.func') }}</h3>
+            <h3 class="text-h4 font-weight-bold product-font">{{ $t('title.func') }}</h3>
           </v-col>
         </v-row>
         <v-row>
@@ -89,7 +89,7 @@ function submit() {
       <v-container class="pa-0">
         <v-row>
           <v-col cols="12">
-            <h3 class="text-h4 font-weight-bold">{{ $t('title.team') }}</h3>
+            <h3 class="text-h4 font-weight-bold product-font">{{ $t('title.team') }}</h3>
           </v-col>
         </v-row>
         <v-row>
@@ -126,7 +126,7 @@ function submit() {
     </v-row>
     <v-row>
       <v-col cols="12">
-        <h3 class="text-h4 font-weight-bold">{{ $t('title.connect') }}</h3>
+        <h3 class="text-h4 font-weight-bold product-font">{{ $t('title.connect') }}</h3>
         <v-form
           validate-on="submit"
           @submit.prevent="submit"
@@ -156,7 +156,7 @@ function submit() {
   </v-container>
 </template>
 
-<style>
+<style scoped>
 .bg-img-1 {
   background-image: url('/src/assets/shadows-1.svg');
   background-position: center;
@@ -169,24 +169,5 @@ function submit() {
   background-position: top;
   background-repeat: no-repeat;
   background-size: 70%;
-}
-
-.col-dev:nth-child(4n + 1) > .v-card,
-.col-dev:nth-child(4n) > .v-card {
-  background-color: #dd0426;
-}
-
-.col-dev .icon {
-  color: #dd0426;
-}
-
-.col-dev:nth-child(4n + 1) > .v-card .icon,
-.col-dev:nth-child(4n) > .v-card .icon {
-  color: white;
-}
-
-.col-dev:nth-child(4n + 1) > .v-card .text-product-red,
-.col-dev:nth-child(4n) > .v-card .text-product-red {
-  color: white;
 }
 </style>
