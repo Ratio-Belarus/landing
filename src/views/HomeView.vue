@@ -44,7 +44,7 @@ function submit() {
   <v-container class="px-4 mx-auto">
     <v-row>
       <v-sheet
-        class="custom-container pa-0 px-4 pt-lg-32 pb-lg-65 pt-md-16 pb-md-21 pt-sm-8 pb-sm-10 pt-xs-4 pb-xs-3"
+        class="custom-container pa-0 px-4 pt-lg-32 pt-md-16 pb-md-21 pt-sm-8 pb-sm-10 pt-xs-4 pb-xs-3"
       >
         <v-sheet class="elem-1 bg-img-1 h-100 d-flex justify-center align-center">
           <h1 class="custom-h1 font-weight-bold product-font mb-6">
@@ -74,7 +74,7 @@ function submit() {
           </v-col>
         </v-row>
         <v-row>
-          <v-col v-for="card in functionCards" :cols="6" class="pa-0">
+          <v-col v-for="card in functionCards" :cols="6" class="pa-0 px-4">
             <div class="d-flex align-center text-base">
               <component :is="card.type + '-icon'" :width="54" class="flex-0-0" />
               <v-card elevation="0" :text="card.text">
@@ -105,7 +105,7 @@ function submit() {
                 <v-avatar size="112" :image="card.img"></v-avatar>
               </template>
               <template v-slot:title>
-                <p class="text-product-red font-italic font-weight-bold text-wrap custom-h4 mb-1">
+                <p class="text-product-red font-italic font-weight-bold text-wrap custom-h3 mb-1">
                   {{ card.name }}
                 </p>
               </template>
