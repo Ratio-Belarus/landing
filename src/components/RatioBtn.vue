@@ -7,7 +7,7 @@
     "
     :href="ratioFormLink"
     target="blank"
-    class="text-white text-capitalize font-weight-medium btn-large"
+    class="text-white text-capitalize font-weight-medium btn-large text-base"
     >{{ props.text }}</v-btn
   >
 </template>

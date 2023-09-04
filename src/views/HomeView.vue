@@ -44,12 +44,10 @@ function submit() {
   <v-container class="px-4 mx-auto">
     <v-row>
       <v-sheet
-        class="custom-container pa-4 pt-lg-32 pb-lg-65 pt-md-16 pb-md-21 pt-sm-8 pb-sm-10 pt-xs-4 pb-xs-3"
+        class="custom-container pa-0 px-4 pt-lg-32 pb-lg-65 pt-md-16 pb-md-21 pt-sm-8 pb-sm-10 pt-xs-4 pb-xs-3"
       >
         <v-sheet class="elem-1 bg-img-1 h-100 d-flex justify-center align-center">
-          <h1
-            class="text-xs-h5 text-sm-h4 text-md-h3 text-lg-h2 font-weight-bold product-font mb-6"
-          >
+          <h1 class="custom-h1 font-weight-bold product-font mb-6">
             {{ $t('title.intro.first') }}
             <span class="text-product-red">{{ $t('title.intro.second') }} </span>
             {{ $t('title.intro.third') }}
@@ -59,7 +57,7 @@ function submit() {
           <v-img :src="mobiles_img"></v-img>
         </v-sheet>
         <v-sheet class="elem-2">
-          <p class="text-medium-emphasis mb-5 text-base text-lg">
+          <p class="text-medium-emphasis mb-5 text-base">
             {{ $t('description.intro') }}
           </p>
           <RatioBtn :text="$t('btn.join')" />
@@ -67,20 +65,22 @@ function submit() {
       </v-sheet>
     </v-row>
     <v-row>
-      <v-container class="pa-0">
+      <v-container class="pb-25">
         <v-row>
           <v-col cols="12">
-            <h3 class="text-h4 font-weight-bold product-font">{{ $t('title.func') }}</h3>
+            <h3 class="font-weight-bold product-font pb-8 custom-h2">
+              {{ $t('title.func') }}
+            </h3>
           </v-col>
         </v-row>
         <v-row>
           <v-col v-for="card in functionCards" :cols="6" class="pa-0">
-            <div class="d-flex align-center">
+            <div class="d-flex align-center text-base">
               <component :is="card.type + '-icon'" :width="54" class="flex-0-0" />
               <v-card elevation="0" :text="card.text">
                 <template v-slot:title>
-                  <div class="d-flex align-center font-weight-bold">
-                    <p class="text-28">{{ card.title }}</p>
+                  <div class="d-flex align-center font-weight-bold custom-h3">
+                    <p>{{ card.title }}</p>
                   </div>
                 </template>
               </v-card>
@@ -90,10 +90,12 @@ function submit() {
       </v-container>
     </v-row>
     <v-row>
-      <v-container class="pa-0">
+      <v-container class="pb-25">
         <v-row>
           <v-col cols="12">
-            <h3 class="text-h4 font-weight-bold product-font">{{ $t('title.team') }}</h3>
+            <h3 class="font-weight-bold product-font pb-xs-2 pb-sm-4 pb-md-6 pb-lg-8 custom-h2">
+              {{ $t('title.team') }}
+            </h3>
           </v-col>
         </v-row>
         <v-row>
@@ -103,15 +105,16 @@ function submit() {
                 <v-avatar size="112" :image="card.img"></v-avatar>
               </template>
               <template v-slot:title>
-                <p class="text-product-red text-28 font-italic font-weight-bold text-wrap">
+                <p class="text-product-red font-italic font-weight-bold text-wrap custom-h4 mb-1">
                   {{ card.name }}
                 </p>
               </template>
               <template v-slot:subtitle>
-                <p class="text-product-red font-weight-medium text-wrap">{{ card.position }}</p>
+                <p class="text-product-red font-weight-medium text-wrap text-base">
+                  {{ card.position }}
+                </p>
               </template>
               <template v-slot:text>
-                <!-- Сommented out temporarily as there is no data yet-->
                 <RatioSocialNetworksBar
                   v-if="card.networks"
                   :networks="card.networks"
@@ -130,7 +133,7 @@ function submit() {
     </v-row>
     <v-row>
       <v-col cols="12">
-        <h3 class="text-h4 font-weight-bold product-font">{{ $t('title.connect') }}</h3>
+        <h3 class="font-weight-bold product-font pb-8 custom-h2">{{ $t('title.connect') }}</h3>
         <v-form
           validate-on="submit"
           @submit.prevent="submit"

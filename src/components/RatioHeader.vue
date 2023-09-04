@@ -10,7 +10,7 @@
     <v-app-bar-title>
       <div class="d-flex align-center font-weight-bold">
         <logo-icon :width="60" />
-        <p class="text-28 text-product-red">Рацыя</p>
+        <p class="custom-h3 text-product-red">Рацыя</p>
       </div>
     </v-app-bar-title>
     <RatioSocialNetworksBar
