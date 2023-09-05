@@ -5,10 +5,16 @@ import RatioSocialNetworksBar from '../components/RatioSocialNetworksBar.vue'
 import RatioBtn from '../components/RatioBtn.vue'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useDisplay } from 'vuetify'
 
 const store = useStore()
 
 const { t } = useI18n()
+const { sm, xs } = useDisplay()
+
+const cols = computed(() => {
+  return sm.value || xs.value ? 12 : 6
+})
 
 const functionCards = computed(() => [
   {
@@ -74,9 +80,9 @@ function submit() {
           </v-col>
         </v-row>
         <v-row>
-          <v-col v-for="card in functionCards" :cols="6" class="pa-0 px-4">
+          <v-col v-for="card in functionCards" :cols="cols" class="pa-0 px-4">
             <div class="d-flex align-center text-base">
-              <component :is="card.type + '-icon'" :width="54" class="flex-0-0" />
+              <component :is="card.type + '-icon'" :width="cols == 12 ? 34 : 54" class="flex-0-0" />
               <v-card elevation="0" :text="card.text">
                 <template v-slot:title>
                   <div class="d-flex align-center font-weight-bold custom-h3">
@@ -99,10 +105,10 @@ function submit() {
           </v-col>
         </v-row>
         <v-row>
-          <v-col v-for="(card, i) in devCards" :key="i" :cols="6" class="col-dev">
+          <v-col v-for="(card, i) in devCards" :key="i" :cols="cols" class="col-dev">
             <v-card elevation="0" class="fill-height">
               <template v-slot:prepend>
-                <v-avatar size="112" :image="card.img"></v-avatar>
+                <v-avatar :size="cols == 12 ? 80 : 112" :image="card.img"></v-avatar>
               </template>
               <template v-slot:title>
                 <p class="text-product-red font-italic font-weight-bold text-wrap custom-h3 mb-1">
