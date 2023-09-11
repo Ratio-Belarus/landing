@@ -53,14 +53,14 @@ function submit() {
       <v-sheet
         class="custom-container pa-0 px-4 pt-lg-32 pt-md-16 pb-md-21 pt-sm-8 pb-sm-10 pt-xs-4 pb-xs-3"
       >
-        <v-sheet class="elem-1 bg-img-1 h-100 d-flex justify-center align-center">
+        <v-sheet class="elem-1 bg-img-1 d-flex justify-center align-center">
           <h1 class="custom-h1 font-weight-bold product-font mb-6">
             {{ $t('title.intro.first') }}
             <span class="text-product-red">{{ $t('title.intro.second') }} </span>
             {{ $t('title.intro.third') }}
           </h1>
         </v-sheet>
-        <v-sheet class="elem-3 bg-img-2">
+        <v-sheet v-if="!(sm || xs)" class="elem-3 bg-img-2">
           <v-img :src="mobiles_img"></v-img>
         </v-sheet>
         <v-sheet class="elem-2">
