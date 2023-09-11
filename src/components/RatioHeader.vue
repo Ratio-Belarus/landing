@@ -35,14 +35,11 @@
           >{{ usedLang }}
         </v-btn>
       </template>
+
       <v-list>
         <template v-for="(language, index) in languages" :key="index">
           <v-list-item v-if="language != usedLang">
-            <v-list-item-title
-              class="text-uppercase text-center cursor-pointer"
-              @click="chooseLang"
-              >{{ language }}</v-list-item-title
-            >
+            <v-btn elevation="0" @click="chooseLang">{{ language }}</v-btn>
           </v-list-item>
         </template>
       </v-list>
@@ -87,9 +84,5 @@ function resizeHandler() {
 <style scoped>
 .ratio-header .v-toolbar__content > .v-btn:last-child {
   margin-inline-end: 16px;
-}
-
-.cursor-pointer {
-  cursor: pointer;
 }
 </style>
