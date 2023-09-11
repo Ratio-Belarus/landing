@@ -60,7 +60,7 @@ function submit() {
             {{ $t('title.intro.third') }}
           </h1>
         </v-sheet>
-        <v-sheet v-if="!(sm || xs)" class="elem-3 bg-img-2">
+        <v-sheet v-if="!xs" class="elem-3 bg-img-2">
           <v-img :src="mobiles_img"></v-img>
         </v-sheet>
         <v-sheet class="elem-2">
