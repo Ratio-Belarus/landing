@@ -5,9 +5,10 @@
     :size="
       widthClient <= 450 ? 'small' : widthClient > 450 && widthClient <= 960 ? 'large' : 'x-large'
     "
-    :href="ratioFormLink"
+    :href="props.href"
     target="blank"
     class="text-white text-capitalize font-weight-medium btn-large text-base letter-spacing-normal custom-btn"
+    @click="emits('click')"
     >{{ props.text }}</v-btn
   >
 </template>
@@ -17,12 +18,13 @@ import { computed } from 'vue'
 import { useStore } from 'vuex'
 
 const props = defineProps({
-  text: String
+  text: String,
+  href: String
 })
 
-const store = useStore()
+const emits = defineEmits(['click'])
 
-const ratioFormLink = store.state.ratioFormLink
+const store = useStore()
 
 const widthClient = computed(() => store.state.widthClient)
 </script>

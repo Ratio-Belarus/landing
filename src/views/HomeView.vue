@@ -40,6 +40,7 @@ const functionCards = computed(() => [
 ])
 const devCards = store.state.devCards
 const formFields = ref(store.state.formFields)
+const ratioFormLink = store.state.ratioFormLink
 
 function submit() {
   store.dispatch('setFormFields', formFields.value)
@@ -66,7 +67,7 @@ function submit() {
           <p class="text-medium-emphasis mb-5 text-base">
             {{ $t('description.intro') }}
           </p>
-          <RatioBtn :text="$t('btn.join')" />
+          <RatioBtn :text="$t('btn.join')" :href="ratioFormLink" />
         </v-sheet>
       </v-sheet>
     </v-row>
@@ -132,7 +133,7 @@ function submit() {
         </v-row>
         <v-row>
           <v-col cols="12" class="d-flex justify-center align-center">
-            <RatioBtn :text="$t('btn.join')" />
+            <RatioBtn :text="$t('btn.join')" :href="ratioFormLink" />
           </v-col>
         </v-row>
       </v-container>
@@ -162,7 +163,7 @@ function submit() {
             v-model="formFields.message"
             class="w-100"
           ></v-textarea>
-          <RatioBtn :text="$t('btn.send')" />
+          <RatioBtn :text="$t('btn.send')" @click="submit" />
         </v-form>
       </v-col>
     </v-row>
