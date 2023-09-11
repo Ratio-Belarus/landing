@@ -11,6 +11,11 @@
     >
       <v-icon :color="colorIcon" v-if="key == 'email'" class="icon">mdi-{{ key }}-outline</v-icon>
       <telegram-icon :color="colorIcon" v-else-if="key == 'telegram'" class="icon" />
+      <font-awesome-icon
+        :color="colorIcon"
+        v-else-if="key == 'twitter'"
+        icon="fa-brands fa-x-twitter"
+      />
       <v-icon :color="colorIcon" v-else class="icon">mdi-{{ key }}</v-icon>
     </v-btn>
   </template>
@@ -32,6 +37,11 @@
               mdi-{{ key }}-outline
             </v-icon>
             <telegram-icon :color="colorIcon" v-else-if="key == 'telegram'" class="icon" />
+            <font-awesome-icon
+              :color="colorIcon"
+              v-else-if="key == 'twitter'"
+              icon="fa-brands fa-x-twitter"
+            />
             <v-icon :color="colorIcon" v-else class="icon">mdi-{{ key }}</v-icon>
           </v-btn>
         </v-list-item>
