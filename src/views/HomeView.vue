@@ -108,7 +108,10 @@ function submit() {
           <v-col v-for="(card, i) in devCards" :key="i" :cols="cols" class="col-dev">
             <v-card elevation="0" class="fill-height">
               <template v-slot:prepend>
-                <v-avatar :size="cols == 12 ? 80 : 112" :image="card.img"></v-avatar>
+                <v-avatar
+                  :size="cols == 12 ? 80 : 112"
+                  :image="card.img || 'avatar.svg'"
+                ></v-avatar>
               </template>
               <template v-slot:title>
                 <p class="text-product-red font-italic font-weight-bold text-wrap custom-h3 mb-1">
