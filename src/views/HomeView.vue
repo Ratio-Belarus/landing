@@ -106,31 +106,28 @@ function submit() {
         </v-row>
         <v-row>
           <v-col v-for="(card, i) in devCards" :key="i" :cols="cols" class="col-dev">
-            <v-card elevation="0" class="fill-height">
-              <template v-slot:prepend>
-                <v-avatar
-                  :size="cols == 12 ? 80 : 112"
-                  :image="card.img || 'avatar.svg'"
-                ></v-avatar>
-              </template>
-              <template v-slot:title>
-                <p class="text-product-red font-italic font-weight-bold text-wrap custom-h3 mb-1">
-                  {{ card.name }}
-                </p>
-              </template>
-              <template v-slot:subtitle>
-                <p class="text-product-red font-weight-medium text-wrap text-base">
-                  {{ card.position }}
-                </p>
-              </template>
-              <template v-slot:text>
-                <RatioSocialNetworksBar
-                  v-if="card.networks"
-                  :networks="card.networks"
-                  color="transparent"
-                />
-              </template>
-            </v-card>
+            <div class="d-flex justify-center align-center text-base px-9 py-4 dev-card h-100">
+              <v-avatar :size="cols == 12 ? 80 : 112" :image="card.img || 'avatar.svg'"></v-avatar>
+              <v-card elevation="0" :text="card.text" class="custom-card" color="transparent">
+                <template v-slot:title>
+                  <p class="text-product-red font-italic font-weight-bold text-wrap custom-h3 mb-4">
+                    {{ card.name }}
+                  </p>
+                </template>
+                <template v-slot:subtitle>
+                  <p class="text-product-red font-weight-medium text-wrap text-base opacity-1 pb-0">
+                    {{ card.position }}
+                  </p>
+                </template>
+                <template v-slot:text>
+                  <RatioSocialNetworksBar
+                    v-if="card.networks"
+                    :networks="card.networks"
+                    color="transparent"
+                  />
+                </template>
+              </v-card>
+            </div>
           </v-col>
         </v-row>
         <v-row>
@@ -172,7 +169,7 @@ function submit() {
   </v-container>
 </template>
 
-<style>
+<style scoped>
 .bg-img-1 {
   background-image: url('/src/assets/shadows-1.svg');
   background-size: contain;
@@ -184,9 +181,5 @@ function submit() {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
-}
-
-.custom-card .v-card-item {
-  padding-top: 0 !important;
 }
 </style>

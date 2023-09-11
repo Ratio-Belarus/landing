@@ -21,23 +21,34 @@
   white-space: normal;
 }
 
-.col-dev:nth-child(4n + 1) > .v-card,
-.col-dev:nth-child(4n) > .v-card {
+.col-dev:nth-child(4n + 1) > .dev-card,
+.col-dev:nth-child(4n) > .dev-card {
   background-color: #dd0426;
+  border-radius: 8px;
 }
 
-.col-dev .icon {
+.col-dev .icon,
+.col-dev svg {
   color: #dd0426;
 }
 
-.col-dev:nth-child(4n + 1) > .v-card .icon,
-.col-dev:nth-child(4n) > .v-card .icon {
+.col-dev:nth-child(4n + 1) .icon,
+.col-dev svg {
   color: white;
 }
 
-.col-dev:nth-child(4n + 1) > .v-card .text-product-red,
-.col-dev:nth-child(4n) > .v-card .text-product-red {
+
+.col-dev:nth-child(4n + 1) > .dev-card .text-product-red,
+.col-dev:nth-child(4n) > .dev-card .text-product-red {
   color: white;
+}
+
+.col-dev .dev-card .v-card-subtitle {
+  opacity: 1;
+}
+
+.col-dev .dev-card .v-card-text {
+  padding: 0;
 }
 
 .product-font {
