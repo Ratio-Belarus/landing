@@ -7,7 +7,7 @@
     "
     :href="ratioFormLink"
     target="blank"
-    class="text-white text-capitalize font-weight-medium btn-large text-base"
+    class="text-white text-capitalize font-weight-medium btn-large text-base letter-spacing-normal"
     >{{ props.text }}</v-btn
   >
 </template>
@@ -27,4 +27,8 @@ const ratioFormLink = store.state.ratioFormLink
 const widthClient = computed(() => store.state.widthClient)
 </script>
 
-<style></style>
+<style>
+.letter-spacing-normal {
+  letter-spacing: normal !important;
+}
+</style>
