@@ -4,6 +4,7 @@ import axios from 'axios'
 const store = createStore({
   state() {
     return {
+      endpoint: 'https://qa-ratio-by.herokuapp.com',
       widthClient: null,
       networks: {
         twitter: 'https://twitter.com/RatioBelarus',
@@ -13,25 +14,6 @@ const store = createStore({
       ratioFormLink:
         'https://docs.google.com/forms/d/e/1FAIpQLScFgIHcn-tjQENR3SkQXScn4HrlUxcV_LMEBN6Lu7UpCA8q9Q/viewform?pli=1',
       devCards: [
-        // {
-        //   img: 'avatar.svg',
-        //   name: 'Нік',
-        //   position: 'Аўтар урокаў',
-        //   networks: {
-        //     twitter: '#',
-        //     telegram: '#',
-        //     instagram: '#'
-        //   }
-        // },
-        // {
-        //   img: 'avatar.svg',
-        //   name: 'Алесь Вясёлка',
-        //   position: 'Рэдактар урокаў',
-        //   networks: {
-        //     twitter: '#',
-        //     telegram: '#'
-        //   }
-        // },
         {
           img: 'avatar.svg',
           name: 'Plistačka',
@@ -43,11 +25,6 @@ const store = createStore({
             patreon: 'https://www.patreon.com/plistachka'
           }
         },
-        // {
-        //   img: 'avatar.svg',
-        //   name: 'Ян Яновіч',
-        //   position: 'Тэсціроўшчык'
-        // },
         {
           img: 'avatar.svg',
           name: 'deadbeathd07',
@@ -59,10 +36,6 @@ const store = createStore({
       ],
       formFields: {
         contact: null,
-        message: null
-      },
-      error: {
-        status: false,
         message: null
       }
     }
@@ -85,13 +58,9 @@ const store = createStore({
     setFunctionCards({ commit }, newFunctionCards) {
       commit('SET_FUNCTION_CARDS', newFunctionCards)
     },
-    setFormFields({ commit }, newFormFields) {
+    setFormFields({ commit, state }, newFormFields) {
       commit('SET_FORM_FIELDS', newFormFields)
-      // This origin point will need to be deleted in the future, as it is a test, and replace it with a valid one
-      axios
-        .post('https://qa-ratio-by.herokuapp.com/contact_us', newFormFields)
-        .then(() => console.log('done'))
-        .catch((err) => console.log(err))
+      axios.post(state.endpoint + '/contact_us', newFormFields)
     }
   }
 })
