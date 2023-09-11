@@ -107,7 +107,9 @@ function submit() {
         </v-row>
         <v-row>
           <v-col v-for="(card, i) in devCards" :key="i" :cols="cols" class="col-dev">
-            <div class="d-flex justify-center align-center text-base px-9 py-4 dev-card h-100">
+            <div
+              class="d-flex justify-center align-center text-base px-2 py-2 px-md-5 px-lg-9 py-lg-4 dev-card h-100"
+            >
               <v-avatar :size="cols == 12 ? 80 : 112" :image="card.img || 'avatar.svg'"></v-avatar>
               <v-card elevation="0" :text="card.text" class="custom-card" color="transparent">
                 <template v-slot:title>
