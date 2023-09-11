@@ -2,9 +2,7 @@
   <v-btn
     color="#DD0426"
     variant="flat"
-    :size="
-      widthClient <= 450 ? 'small' : widthClient > 450 && widthClient <= 960 ? 'large' : 'x-large'
-    "
+    :size="widthClient <= 960 ? 'large' : 'x-large'"
     :href="props.href"
     target="blank"
     class="text-white text-capitalize font-weight-medium btn-large text-base letter-spacing-normal custom-btn"
