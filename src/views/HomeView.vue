@@ -81,11 +81,11 @@ function submit() {
         </v-row>
         <v-row>
           <v-col v-for="card in functionCards" :cols="cols" class="pa-0 px-4">
-            <div class="d-flex align-center text-base">
+            <div class="d-flex text-base">
               <component :is="card.type + '-icon'" :width="cols == 12 ? 34 : 54" class="flex-0-0" />
-              <v-card elevation="0" :text="card.text">
+              <v-card elevation="0" :text="card.text" class="custom-card">
                 <template v-slot:title>
-                  <div class="d-flex align-center font-weight-bold custom-h3">
+                  <div class="d-flex align-start justify-start font-weight-bold custom-h3">
                     <p>{{ card.title }}</p>
                   </div>
                 </template>
@@ -172,7 +172,7 @@ function submit() {
   </v-container>
 </template>
 
-<style scoped>
+<style>
 .bg-img-1 {
   background-image: url('/src/assets/shadows-1.svg');
   background-size: contain;
@@ -184,5 +184,9 @@ function submit() {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
+}
+
+.custom-card .v-card-item {
+  padding-top: 0 !important;
 }
 </style>
