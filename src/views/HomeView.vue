@@ -128,9 +128,13 @@ function submit() {
         <v-row>
           <v-col v-for="(card, i) in devCards" :key="i" :cols="cols" class="col-dev">
             <div
-              class="d-flex justify-center align-center text-base px-2 py-2 px-md-5 px-lg-9 py-lg-4 dev-card h-100"
+              class="d-flex justify-center align-start text-base px-2 py-2 px-md-5 px-lg-9 py-lg-4 dev-card h-100"
             >
-              <v-avatar :size="cols == 12 ? 80 : 112" :image="card.img || 'avatar.svg'"></v-avatar>
+              <v-avatar
+                :size="cols == 12 ? 80 : 112"
+                :image="card.img || 'avatar.svg'"
+                class="mt-3"
+              ></v-avatar>
               <v-card elevation="0" :text="card.text" color="transparent">
                 <template v-slot:title>
                   <p class="text-product-red font-italic font-weight-bold text-wrap custom-h3 mb-4">

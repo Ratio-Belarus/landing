@@ -33,14 +33,19 @@
 }
 
 .col-dev:nth-child(4n + 1) .icon,
-.col-dev svg {
+.col-dev:nth-child(4n + 1) svg,
+.col-dev:nth-child(4n) .icon,
+.col-dev:nth-child(4n) svg {
   color: white;
 }
-
 
 .col-dev:nth-child(4n + 1) > .dev-card .text-product-red,
 .col-dev:nth-child(4n) > .dev-card .text-product-red {
   color: white;
+}
+
+.col-dev:nth-child(even) > .dev-card {
+  flex-direction: row-reverse;
 }
 
 .col-dev .dev-card .v-card-subtitle {
