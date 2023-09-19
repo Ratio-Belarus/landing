@@ -173,6 +173,7 @@ function submit() {
           class="mt-5 d-flex flex-column align-center justify-center"
         >
           <v-text-field
+            clearable
             :label="$t('placeholder.communication')"
             variant="outlined"
             v-model="formFields.contact"
