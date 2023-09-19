@@ -60,8 +60,7 @@ const devCards = [
   }
 ]
 const formFields = ref(store.state.formFields)
-const ratioFormLink =
-  'https://docs.google.com/forms/d/e/1FAIpQLScFgIHcn-tjQENR3SkQXScn4HrlUxcV_LMEBN6Lu7UpCA8q9Q/viewform?pli=1'
+const ratioFormLink = import.meta.VITE_FORM_ENDPOINT_URL
 
 function submit() {
   store.dispatch('setFormFields', formFields.value)
