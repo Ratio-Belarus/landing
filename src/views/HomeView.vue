@@ -59,8 +59,10 @@ const devCards = [
     }
   }
 ]
-const formFields = ref(store.state.formFields)
 const ratioFormLink = import.meta.VITE_FORM_ENDPOINT_URL
+
+const formFields = ref(store.state.formFields)
+const errorMessage = computed(() => store.state.errorMessage)
 
 function submit() {
   store.dispatch('setFormFields', formFields.value)
@@ -192,6 +194,9 @@ function submit() {
           ></v-textarea>
           <RatioBtn :text="$t('btn.send')" @click="submit" />
         </v-form>
+        <v-overlay :model-value="Boolean(errorMessage)" class="align-center justify-center">
+          <v-alert v-if="errorMessage" :text="errorMessage.text" :type="errorMessage.type" />
+        </v-overlay>
       </v-col>
     </v-row>
   </v-container>
