@@ -38,9 +38,30 @@ const functionCards = computed(() => [
     type: 'competition'
   }
 ])
-const devCards = store.state.devCards
+const devCards = [
+  {
+    img: 'https://pbs.twimg.com/profile_images/1556551928678649857/fJdwL7ML_400x400.jpg',
+    name: 'Plistačka',
+    position: 'Распрацоўшчыца (Python, React Native), менеджар праекта, дызайнер',
+    networks: {
+      twitter: 'https://twitter.com/plistacka',
+      github: 'https://github.com/Plistachka',
+      mastodon: 'https://vkl.world/@plistachka',
+      patreon: 'https://www.patreon.com/plistachka'
+    }
+  },
+  {
+    img: '',
+    name: 'deadbeathd07',
+    position: 'Распрацоўшчыца (Vue, Laravel)',
+    networks: {
+      github: 'https://github.com/deadbeathd07'
+    }
+  }
+]
 const formFields = ref(store.state.formFields)
-const ratioFormLink = store.state.ratioFormLink
+const ratioFormLink =
+  'https://docs.google.com/forms/d/e/1FAIpQLScFgIHcn-tjQENR3SkQXScn4HrlUxcV_LMEBN6Lu7UpCA8q9Q/viewform?pli=1'
 
 function submit() {
   store.dispatch('setFormFields', formFields.value)
