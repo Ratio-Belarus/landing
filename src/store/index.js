@@ -4,7 +4,6 @@ import axios from 'axios'
 const store = createStore({
   state() {
     return {
-      endpoint: 'https://qa-ratio-by.herokuapp.com',
       widthClient: null,
       networks: {
         twitter: 'https://twitter.com/RatioBelarus',
@@ -58,9 +57,9 @@ const store = createStore({
     setFunctionCards({ commit }, newFunctionCards) {
       commit('SET_FUNCTION_CARDS', newFunctionCards)
     },
-    setFormFields({ commit, state }, newFormFields) {
+    setFormFields({ commit }, newFormFields) {
       commit('SET_FORM_FIELDS', newFormFields)
-      axios.post(state.endpoint + '/contact_us', newFormFields)
+      axios.post(import.meta.env.VITE_APP_API_ENDPOINT_URL + '/contact_us', newFormFields)
     }
   }
 })
