@@ -194,7 +194,11 @@ function submit() {
           ></v-textarea>
           <RatioBtn :text="$t('btn.send')" @click="submit" />
         </v-form>
-        <v-overlay :model-value="Boolean(errorMessage)" class="align-center justify-center">
+        <v-overlay
+          transition="fade-transition"
+          :model-value="Boolean(errorMessage)"
+          class="align-center justify-center"
+        >
           <v-alert v-if="errorMessage" :text="errorMessage.text" :type="errorMessage.type" />
         </v-overlay>
       </v-col>
