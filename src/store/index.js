@@ -57,9 +57,7 @@ const store = createStore({
             }
           }
           commit('SET_ERROR_MESSAGE', errorMessage)
-        })
-        .finally(() => {
-          commit('SET_ERROR_MESSAGE', null)
+          setTimeout(() => commit('SET_ERROR_MESSAGE', null), 2000)
         })
     }
   }
