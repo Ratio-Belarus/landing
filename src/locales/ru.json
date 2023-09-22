@@ -31,5 +31,8 @@
   "placeholder": {
     "connect": "Введите текст...",
     "communication": "Способ связи с Вами (email, Telegram или иное)"
+  },
+  "messages": {
+    "error": "Что-то пошло не так. Повторите позже"
   }
 }

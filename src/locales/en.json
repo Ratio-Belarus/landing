@@ -31,5 +31,8 @@
   "placeholder": {
     "connect": "Enter text...",
     "communication": "Method of communication with you (email, Telegram or otherwise)"
+  },
+  "messages": {
+    "error": "Something went wrong. Please try again later"
   }
 }
