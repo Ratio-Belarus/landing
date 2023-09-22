@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import i18n from '../locales'
 
 const store = createStore({
   state() {
@@ -43,15 +44,22 @@ const store = createStore({
       axios
         .post(import.meta.env.VITE_APP_API_ENDPOINT_URL + '/contact_us', newFormFields)
         .then((res) => {
-          let errorMessage = {}
+          let errorMessage
           if (res.status == 200) {
-            errorMessage.type = 'success'
+            errorMessage = {
+              type: 'success',
+              text: i18n.global.t('messages.success')
+            }
           } else {
-            errorMessage.type = 'error'
+            errorMessage = {
+              type: 'warning',
+              text: i18n.global.t('messages.error')
+            }
           }
-          errorMessage.text = res.data.data
           commit('SET_ERROR_MESSAGE', errorMessage)
-          setTimeout(() => commit('SET_ERROR_MESSAGE', null), 2000)
+        })
+        .finally(() => {
+          commit('SET_ERROR_MESSAGE', null)
         })
     }
   }
