@@ -21,6 +21,7 @@
     <RatioBtn
       v-if="widthClient > 450"
       :text="$t('btn.join')"
+      :href="props.ratioFormLink"
       class="ml-lg-12 ml-md-4 ml-sm-2 ml-xs-2"
     />
     <v-menu>

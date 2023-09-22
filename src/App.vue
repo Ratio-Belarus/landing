@@ -16,7 +16,7 @@ import RatioHeader from './components/RatioHeader.vue'
 const store = useStore()
 
 const networks = store.state.networks
-const ratioFormLink = store.state.ratioFormLink
+const ratioFormLink = import.meta.env.VITE_FORM_ENDPOINT_URL
 
 store.dispatch('setWidthClient', window.innerWidth)
 </script>
