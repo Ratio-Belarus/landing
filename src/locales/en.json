@@ -33,6 +33,7 @@
     "communication": "Method of communication with you (email, Telegram or otherwise)"
   },
   "messages": {
+    "success": "The message was sent successfully",
     "error": "Something went wrong. Please try again later"
   }
 }
