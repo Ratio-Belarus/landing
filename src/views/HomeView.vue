@@ -59,7 +59,7 @@ const devCards = [
     }
   }
 ]
-const ratioFormLink = import.meta.VITE_FORM_ENDPOINT_URL
+const ratioFormLink = import.meta.env.VITE_FORM_ENDPOINT_URL
 
 const formFields = ref(store.state.formFields)
 const errorMessage = computed(() => store.state.errorMessage)
