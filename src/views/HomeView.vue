@@ -67,6 +67,16 @@ const errorMessage = computed(() => store.state.errorMessage)
 function submit() {
   store.dispatch('setFormFields', formFields.value)
 }
+
+const rulesName = [
+  (v) => !!v || 'Required',
+  (v) => (v && v.length <= 3 ? 'Min length 3' : v && v.length > 256 ? 'Max length 256' : true)
+]
+
+const rulesMessage = [
+  (v) => !!v || 'Required',
+  (v) => (v && v.length > 2048 ? 'Max length 2048' : true)
+]
 </script>
 
 <template>
@@ -170,16 +180,18 @@ function submit() {
       <v-col cols="12">
         <h3 class="font-weight-bold product-font pb-8 custom-h2">{{ $t('title.connect') }}</h3>
         <v-form
-          validate-on="submit"
+          validate-on="input"
           @submit.prevent="submit"
           class="mt-5 d-flex flex-column align-center justify-center"
         >
           <v-text-field
             clearable
             :label="$t('placeholder.communication')"
+            :counter="256"
+            :rules="rulesName"
             variant="outlined"
             v-model="formFields.contact"
-            class="w-100"
+            class="w-100 mb-3"
           ></v-text-field>
           <v-textarea
             clearable
@@ -188,9 +200,11 @@ function submit() {
             rows="4"
             row-height="30"
             :label="$t('placeholder.connect')"
+            :counter="2048"
+            :rules="rulesMessage"
             shaped
             v-model="formFields.message"
-            class="w-100"
+            class="w-100 mb-3"
           ></v-textarea>
           <RatioBtn :text="$t('btn.send')" @click="submit" />
         </v-form>

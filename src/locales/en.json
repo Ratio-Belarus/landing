@@ -35,5 +35,9 @@
   "messages": {
     "success": "The message was sent successfully",
     "error": "Something went wrong. Please try again later"
+  },
+  "rules": {
+    "required": "Required field",
+    "maxLength": "Maximum field length is"
   }
 }
