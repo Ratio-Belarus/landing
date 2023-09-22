@@ -38,6 +38,7 @@
   },
   "rules": {
     "required": "Required field",
+    "minLength": "Minimum field length is",
     "maxLength": "Maximum field length is"
   }
 }
