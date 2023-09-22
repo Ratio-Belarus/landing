@@ -8,6 +8,7 @@ import { useI18n } from 'vue-i18n'
 import { useDisplay } from 'vuetify'
 
 const store = useStore()
+const i18n = useI18n()
 
 const { t } = useI18n()
 const { sm, xs } = useDisplay()
@@ -69,13 +70,18 @@ function submit() {
 }
 
 const rulesName = [
-  (v) => !!v || 'Required',
-  (v) => (v && v.length <= 3 ? 'Min length 3' : v && v.length > 256 ? 'Max length 256' : true)
+  (v) => !!v || i18n.t('rules.required'),
+  (v) =>
+    v && v.length <= 3
+      ? i18n.t('rules.minLength') + ' 3'
+      : v && v.length > 256
+      ? i18n.t('rules.maxLength') + ' 256'
+      : true
 ]
 
 const rulesMessage = [
-  (v) => !!v || 'Required',
-  (v) => (v && v.length > 2048 ? 'Max length 2048' : true)
+  (v) => !!v || i18n.t('rules.required'),
+  (v) => (v && v.length > 2048 ? i18n.t('rules.maxLength') + ' 2048' : true)
 ]
 </script>
 
