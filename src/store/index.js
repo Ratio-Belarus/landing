@@ -41,24 +41,31 @@ const store = createStore({
     },
     setFormFields({ commit }, newFormFields) {
       commit('SET_FORM_FIELDS', newFormFields)
+      let errorMessage
       axios
         .post(import.meta.env.VITE_APP_API_ENDPOINT_URL + '/contact_us', newFormFields)
-        .then((res) => {
-          let errorMessage
-          if (res.status == 200) {
+        .then(() => {
+          errorMessage = {
+            type: 'success',
+            text: i18n.global.t('messages.success')
+          }
+          commit('SET_ERROR_MESSAGE', errorMessage)
+        })
+        .catch((err) => {
+          if (err.response.status == 422) {
             errorMessage = {
-              type: 'success',
-              text: i18n.global.t('messages.success')
+              type: 'error',
+              text: i18n.global.t('messages.error')
             }
           } else {
             errorMessage = {
               type: 'warning',
-              text: i18n.global.t('messages.error')
+              text: i18n.global.t('messages.warning')
             }
           }
           commit('SET_ERROR_MESSAGE', errorMessage)
-          setTimeout(() => commit('SET_ERROR_MESSAGE', null), 2000)
         })
+        .finally(() => setTimeout(() => commit('SET_ERROR_MESSAGE', null), 2000))
     }
   }
 })
