@@ -10,7 +10,6 @@ import { useVuelidate } from '@vuelidate/core'
 import { required, minLength, maxLength } from '../utils/i18n-validators'
 
 const store = useStore()
-const i18n = useI18n()
 
 const { t } = useI18n()
 const { sm, xs } = useDisplay()
