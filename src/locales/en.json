@@ -36,9 +36,9 @@
     "success": "The message was sent successfully",
     "error": "Something went wrong. Please try again later"
   },
-  "rules": {
+  "validations": {
     "required": "Required field",
-    "minLength": "Minimum field length is",
-    "maxLength": "Maximum field length is"
+    "minLength": "Minimum field length is {min}",
+    "maxLength": "Maximum field length is {max}"
   }
 }
