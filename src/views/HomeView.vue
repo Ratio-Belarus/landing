@@ -6,6 +6,8 @@ import RatioBtn from '../components/RatioBtn.vue'
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useDisplay } from 'vuetify'
+import { useVuelidate } from '@vuelidate/core'
+import { required, minLength, maxLength } from '../utils/i18n-validators'
 
 const store = useStore()
 const i18n = useI18n()
@@ -65,24 +67,23 @@ const ratioFormLink = import.meta.env.VITE_FORM_ENDPOINT_URL
 const formFields = ref(store.state.formFields)
 const errorMessage = computed(() => store.state.errorMessage)
 
+const rules = {
+  contact: {
+    required,
+    minLength: minLength(3),
+    maxLength: maxLength(256)
+  },
+  message: {
+    required,
+    maxLength: maxLength(2048)
+  }
+}
+
+const v$ = useVuelidate(rules, formFields)
+
 function submit() {
   store.dispatch('setFormFields', formFields.value)
 }
-
-const rulesName = [
-  (v) => !!v || i18n.t('rules.required'),
-  (v) =>
-    v && v.length <= 3
-      ? i18n.t('rules.minLength') + ' 3'
-      : v && v.length > 256
-      ? i18n.t('rules.maxLength') + ' 256'
-      : true
-]
-
-const rulesMessage = [
-  (v) => !!v || i18n.t('rules.required'),
-  (v) => (v && v.length > 2048 ? i18n.t('rules.maxLength') + ' 2048' : true)
-]
 </script>
 
 <template>
@@ -186,28 +187,31 @@ const rulesMessage = [
       <v-col cols="12">
         <h3 class="font-weight-bold product-font pb-8 custom-h2">{{ $t('title.connect') }}</h3>
         <v-form
-          validate-on="input"
           @submit.prevent="submit"
           class="mt-5 d-flex flex-column align-center justify-center"
         >
           <v-text-field
             clearable
+            v-model="formFields.contact"
+            :error-messages="v$.contact.$errors.map((e) => e.$message)"
+            @input="v$.contact.$touch"
             :label="$t('placeholder.communication')"
             :counter="256"
-            :rules="rulesName"
+            required
             variant="outlined"
-            v-model="formFields.contact"
             class="w-100 mb-3"
           ></v-text-field>
           <v-textarea
             clearable
             auto-grow
             variant="outlined"
+            required
             rows="4"
             row-height="30"
+            :error-messages="v$.message.$errors.map((e) => e.$message)"
+            @input="v$.message.$touch"
             :label="$t('placeholder.connect')"
             :counter="2048"
-            :rules="rulesMessage"
             shaped
             v-model="formFields.message"
             class="w-100 mb-3"
