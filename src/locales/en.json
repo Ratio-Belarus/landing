@@ -34,7 +34,8 @@
   },
   "messages": {
     "success": "The message was sent successfully",
-    "error": "Something went wrong. Please try again later"
+    "warning": "Something went wrong. Please try again later",
+    "error": "Data entry error!"
   },
   "validations": {
     "required": "Required field",
