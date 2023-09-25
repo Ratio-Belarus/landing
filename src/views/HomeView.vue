@@ -81,7 +81,9 @@ const rules = {
 const v$ = useVuelidate(rules, formFields)
 
 function submit() {
-  store.dispatch('setFormFields', formFields.value)
+  if (formFields.value.contact && formFields.value.message) {
+    store.dispatch('setFormFields', formFields.value)
+  }
 }
 </script>
 
