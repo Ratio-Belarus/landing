@@ -1,0 +1,45 @@
+{
+  "title": {
+    "intro": {
+      "first": "Mobile app for learning the ",
+      "second": "Belarusian",
+      "third": "language"
+    },
+    "func": "Features",
+    "team": "Team",
+    "connect": "Contact us"
+  },
+  "subtitle": {
+    "func": {
+      "rules": "Grammar & Vocabulary.",
+      "practice": "Practice.",
+      "prize": "Reward.",
+      "competition": "Leadership."
+    }
+  },
+  "description": {
+    "intro": "Who can help us learn our native language?! Definitely not Duolingo owl... In October 2022, we gathered a team of volunteers and started developing a mobile application to make it easier to learn our native language and switch to it in everyday life.",
+    "rules": "Lessons are grouped by vocabulary topics: Family, Apartment, Shop, etc. Each lesson also has corresponding grammar rules.",
+    "practice": "After each lesson, you can go through its exercises to check how well you learned the lesson.",
+    "prize": "Get bonuses for completing exercises and daily practice without breaks.",
+    "competition": "Every week you will be able to compete with other users of the app in collecting the most stars."
+  },
+  "btn": {
+    "join": "Join Us",
+    "send": "Send"
+  },
+  "placeholder": {
+    "connect": "Enter text...",
+    "communication": "Method of communication with you (email, Telegram or otherwise)"
+  },
+  "messages": {
+    "success": "The message was sent successfully",
+    "warning": "Something went wrong. Please try again later",
+    "error": "Data entry error!"
+  },
+  "validations": {
+    "required": "Required field",
+    "minLength": "Minimum field length is {min}",
+    "maxLength": "Maximum field length is {max}"
+  }
+}
